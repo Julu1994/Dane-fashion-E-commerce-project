@@ -4,28 +4,36 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
-        <div className="nav">
-            <div className="nav-main">Dane Fashion</div>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
+        <div className="header">
+            <div className="header-logo">Dane Fashion</div>
+            <nav className="header-nav">
+                <ul className="header-nav-list">
+                    <li className="header-nav-item">
+                        <Link className="header-nav-link" to="/">
+                            Home
+                        </Link>
                     </li>
-                    <li>
-                        <Link to="/shop">Shop</Link>
+                    <li className="header-nav-item">
+                        <Link className="header-nav-link" to="/shop">
+                            Shop
+                        </Link>
                     </li>
-                    <li>
-                        <Link to="/lifestyle">Lifestyle</Link>
+                    <li className="header-nav-item">
+                        <Link className="header-nav-link" to="/lifestyle">
+                            Lifestyle
+                        </Link>
                     </li>
-                    <li>
-                        <Link to="/support">Support</Link>
+                    <li className="header-nav-item">
+                        <Link className="header-nav-link" to="/support">
+                            Support
+                        </Link>
                     </li>
                 </ul>
             </nav>
-            <div>
-                <li>Search</li>
-                <li>Avater</li>
-                <li>Cart</li>
+            <div className="header-element">
+                <li className="header-element-search">Search</li>
+                <li className="header-element-login">Login</li>
+                <li className="header-element-cart">Cart</li>
             </div>
         </div>
     );
