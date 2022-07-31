@@ -35,20 +35,43 @@
         &-list {
 
             @include navlist(none);
+
+
+
         }
+
+
+
 
 
         &-link {
+            width: 3px;
             text-decoration: none;
             color: $font-color1;
             font-size: 1rem;
+            position: relative;
+            padding: .4rem;
         }
 
-        &-span {
-            background-color: $secondary-color;
-            width: 90%;
+        &-link::after {
+
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
             height: 2px;
+            background: $secondary-color;
+            transition: .4s ease-out;
         }
+
+        &-link:hover::after {
+
+            left: 0;
+            width: 100%;
+        }
+
+
 
 
     }

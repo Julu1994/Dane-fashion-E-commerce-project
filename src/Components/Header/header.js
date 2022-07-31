@@ -12,25 +12,21 @@ const Header = () => {
                         <Link className="header-nav-link" to="/">
                             Home
                         </Link>
-                        <div className="header-nav-span"></div>
                     </li>
                     <li className="header-nav-item">
                         <Link className="header-nav-link" to="/shop">
                             Shop
                         </Link>
-                        <div className="header-nav-span"></div>
                     </li>
                     <li className="header-nav-item">
                         <Link className="header-nav-link" to="/lifestyle">
                             Lifestyle
                         </Link>
-                        <div className="header-nav-span"></div>
                     </li>
                     <li className="header-nav-item">
                         <Link className="header-nav-link" to="/support">
                             Support
                         </Link>
-                        <div className="header-nav-span"></div>
                     </li>
                 </ul>
             </nav>
