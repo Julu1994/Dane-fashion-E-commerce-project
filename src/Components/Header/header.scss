@@ -18,6 +18,10 @@
         font-weight: 700;
         font-size: 2rem;
 
+        &-dot {
+            color: $secondary-color;
+        }
+
 
     }
 
@@ -77,6 +81,7 @@
     }
 
     &-element {
+        font-size: 1.4rem;
         width: 15%;
         height: 3rem;
         top: 0;
