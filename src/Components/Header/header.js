@@ -21,7 +21,7 @@ const Header = () => {
                 />
             </div>
             <div className="header-logo">
-                Dane<span className="header-logo-dot">.</span>Fashion
+                Dane<span className="header-logo-dot">.</span>com
             </div>
             <nav
                 className={

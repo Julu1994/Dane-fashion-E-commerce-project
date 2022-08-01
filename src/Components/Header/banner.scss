@@ -1,9 +1,54 @@
-.banner-main {
+@import "../Sass/variables.scss";
+
+.banner {
+    position: relative;
     margin: 2rem auto;
     width: 95%;
     height: 60vh;
     background: linear-gradient(36deg, rgba(247, 245, 236, 1) 20%, rgba(255, 231, 205, 1) 48%,
             rgba(250, 204, 212, 0.9009978991596639) 100%);
     border-radius: 2rem;
+
+    &-content {
+        width: 50%;
+        height: 60%;
+        position: absolute;
+        left: 5%;
+        top: 20%;
+        font-family: $arima-font;
+        color: $font-color1;
+
+        &-main {
+            font-size: 6rem;
+            letter-spacing: 2rem;
+        }
+
+        &-title {
+            color: $font-color2;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            transform: translateY(-2rem);
+        }
+
+        &-btn {
+            font-family: $arima-font;
+            font-size: .8rem;
+            color: $base-color;
+            width: 15%;
+            height: 12%;
+            background: linear-gradient(0deg, rgba(245, 97, 97, 1) 36%, rgba(245, 35, 72, 0.8029586834733894) 100%);
+            border: none;
+            border-radius: .5rem;
+            cursor: pointer;
+            letter-spacing: 1px;
+
+            &:hover {
+                background: linear-gradient(0deg, rgba(235, 12, 12, 1) 36%, rgba(236, 16, 54, 0.8029586834733894) 100%);
+
+            }
+        }
+
+    }
+
 
 }
