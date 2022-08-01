@@ -1,18 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import "./header.scss";
 import { Link } from "react-router-dom";
 import { BiSearch } from "react-icons/bi";
 import { AiOutlineUser } from "react-icons/ai";
 import { IoBagHandleOutline } from "react-icons/io5";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { TiDelete } from "react-icons/ti";
 
 const Header = () => {
+    const [toggle, setToggle] = useState(false);
+    const toggleClick = () => {
+        setToggle(!toggle);
+    };
     return (
         <div className="header">
+            <div className="header-togle">
+                <GiHamburgerMenu
+                    onClick={toggleClick}
+                    className="header-togle-btn"
+                />
+            </div>
             <div className="header-logo">
                 Dane<span className="header-logo-dot">.</span>Fashion
             </div>
-            <nav className="header-nav">
+            <nav
+                className={
+                    toggle ? "header-nav show-togle" : "header-nav hide-togle"
+                }>
                 <ul className="header-nav-list">
+                    {toggle && (
+                        <TiDelete
+                            onClick={toggleClick}
+                            className="header-nav-item"
+                        />
+                    )}
+
                     <li className="header-nav-item">
                         <Link className="header-nav-link" to="/">
                             Home

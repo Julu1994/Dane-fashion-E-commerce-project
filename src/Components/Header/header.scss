@@ -7,6 +7,18 @@
     margin: auto;
     position: relative;
 
+    &-togle {
+        margin-top: 2.7rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        visibility: hidden;
+
+        &-btn {
+            cursor: pointer;
+        }
+    }
+
     &-logo {
         width: 15%;
         height: 3rem;
@@ -52,7 +64,7 @@
             width: 3px;
             text-decoration: none;
             color: $font-color1;
-            font-size: 1rem;
+            font-size: .9rem;
             position: relative;
             padding: .4rem;
         }
@@ -89,4 +101,57 @@
         margin-top: 2rem;
         @include navlist(absolute)
     }
+}
+
+//Media Query
+
+@media only screen and (max-width: 950px) {
+    .header-togle {
+        visibility: visible;
+    }
+
+    .header-logo {
+        left: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .header-nav {
+        background-color: #E6E4E2;
+        width: 40%;
+        height: 100vh;
+        margin: 0;
+
+
+    }
+
+    .header-nav-list {
+        all: initial;
+    }
+
+    .header-nav-item {
+        margin-top: 2rem;
+        font-size: 2rem;
+        padding-left: 4rem;
+        list-style: none;
+        cursor: pointer;
+    }
+
+    .header-nav-link {
+        font-size: 1.5rem;
+    }
+
+    .hide-togle {
+        left: -100%;
+    }
+
+    .show-togle {
+        left: -15%;
+        transition: .5s;
+    }
+
+    .header-element {
+        width: 25%;
+    }
+
+
 }
