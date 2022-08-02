@@ -13,11 +13,7 @@ const Banner = () => {
                 <button className="banner-content-btn">Explore Now</button>
             </div>
             <div className="banner-right">
-                <img
-                    src={theImage}
-                    alt="Banner pic"
-                    className="banner-right-img"
-                />
+                <img src={theImage} alt="Banner pic" className="banner-img" />
             </div>
         </div>
     );
