@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./header.scss";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { BiSearch } from "react-icons/bi";
 import { AiOutlineUser } from "react-icons/ai";
 import { IoBagHandleOutline } from "react-icons/io5";
@@ -9,9 +9,11 @@ import { TiDelete } from "react-icons/ti";
 
 const Header = () => {
     const [toggle, setToggle] = useState(false);
+
     const toggleClick = () => {
         setToggle(!toggle);
     };
+
     return (
         <div className="header">
             <div className="header-togle">
