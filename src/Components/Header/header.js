@@ -66,6 +66,7 @@ const Header = () => {
                 </li>
                 <li className="header-element-cart">
                     <IoBagHandleOutline />
+                    <p className="header-element-badge">5</p>
                 </li>
             </div>
         </div>

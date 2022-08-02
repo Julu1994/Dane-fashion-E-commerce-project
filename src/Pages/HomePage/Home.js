@@ -1,5 +1,6 @@
 import React from "react";
-import Banner from "../../Components/Header/banner";
+import Banner from "../../Components/Banner/banner";
+
 import "./home.scss";
 
 function Home() {
