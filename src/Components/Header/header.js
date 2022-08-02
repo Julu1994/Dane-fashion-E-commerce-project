@@ -20,9 +20,9 @@ const Header = () => {
                     className="header-togle-btn"
                 />
             </div>
-            <div className="header-logo">
+            <Link to="/" className="header-logo">
                 Dane<span className="header-logo-dot">.</span>com
-            </div>
+            </Link>
             <nav
                 className={
                     toggle ? "header-nav show-togle" : "header-nav hide-togle"
