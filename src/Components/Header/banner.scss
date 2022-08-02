@@ -27,7 +27,6 @@
             color: $font-color2;
             font-size: 1rem;
             letter-spacing: 2px;
-            transform: translateY(-2rem);
         }
 
         &-btn {
@@ -48,7 +47,52 @@
             }
         }
 
+
+
     }
+
+    &-right {
+        position: absolute;
+        left: 60%;
+        top: 0;
+
+        &-img {}
+
+    }
+
+
+}
+
+@media only screen and (max-width: 1200px) {
+    .banner-content-main {
+        font-size: 4rem;
+        letter-spacing: 1rem;
+
+    }
+
+}
+
+@media only screen and (max-width: 576px) {
+
+    .banner {
+        height: 30vh;
+
+        &-content-main {
+            font-size: 2.5rem;
+            letter-spacing: .5rem;
+
+
+        }
+
+        &-content-title {
+            font-size: .7rem;
+            letter-spacing: 0;
+        }
+
+        &-right {}
+    }
+
+
 
 
 }
