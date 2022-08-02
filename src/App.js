@@ -6,6 +6,7 @@ import Support from "./Pages/SupportPage/support";
 import Lifestyle from "./Pages/LifestylePage/lifestyle";
 import Admin from "./Pages/AdminPage/admin";
 import Header from "./Components/Header/header";
+import Footer from "./Components/Footer/footer";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/support" element={<Support />} />
                 <Route path="/login" element={<Admin />} />
             </Routes>
+            <Footer />
         </Router>
     );
 }

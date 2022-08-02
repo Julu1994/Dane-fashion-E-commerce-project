@@ -1,0 +1,30 @@
+@import "../../Sass/mixins.scss";
+@import "../../Sass/variables.scss";
+
+.social {
+    padding-left: 1rem;
+
+    &-header {
+        @include brandLogo(1.5rem);
+    }
+
+    &-dot {
+        color: $secondary-color;
+    }
+
+    &-text {
+        font-family: $arima-font;
+        font-size: .8rem;
+    }
+
+    &-icons {
+        color: $icon-color;
+        margin-top: 1rem;
+
+        &-item {
+            margin-right: 1rem;
+        }
+    }
+
+
+}

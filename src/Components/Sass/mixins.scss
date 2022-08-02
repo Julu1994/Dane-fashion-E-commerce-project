@@ -4,3 +4,11 @@
     list-style: none;
     position: $position;
 }
+
+@mixin brandLogo ($fontSize) {
+    font-family: $arima-font;
+    font-weight: 700;
+    font-size: $fontSize;
+    text-decoration: none;
+    color: $font-color1;
+}

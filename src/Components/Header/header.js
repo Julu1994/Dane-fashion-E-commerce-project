@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./header.scss";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { BiSearch } from "react-icons/bi";
 import { AiOutlineUser } from "react-icons/ai";
 import { IoBagHandleOutline } from "react-icons/io5";

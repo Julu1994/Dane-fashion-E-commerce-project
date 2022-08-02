@@ -1,7 +1,12 @@
 import React from "react";
+import FooterSocial from "./FooterComponents/footerSocial";
 
 const Footer = () => {
-    return <div>Footer</div>;
+    return (
+        <div>
+            <FooterSocial />
+        </div>
+    );
 };
 
 export default Footer;
