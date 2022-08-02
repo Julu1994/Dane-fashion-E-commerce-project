@@ -117,9 +117,10 @@
 
     .header-nav {
         background-color: #E6E4E2;
-        width: 40%;
+        width: 50%;
         height: 100vh;
         margin: 0;
+        z-index: 2000;
 
 
     }
@@ -131,7 +132,7 @@
     .header-nav-item {
         margin-top: 2rem;
         font-size: 2rem;
-        padding-left: 4rem;
+        padding-left: 2rem;
         list-style: none;
         cursor: pointer;
     }

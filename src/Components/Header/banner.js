@@ -10,7 +10,7 @@ const Banner = () => {
                 <h6 className="banner-content-title">
                     LIFE'S TOO SHORT TO WEAR BORING CLOTHES
                 </h6>
-                <button className="banner-content-btn">Explore Now</button>
+                <button className="banner-content-btn">Explore</button>
             </div>
             <div className="banner-right">
                 <img src={theImage} alt="Banner pic" className="banner-img" />
