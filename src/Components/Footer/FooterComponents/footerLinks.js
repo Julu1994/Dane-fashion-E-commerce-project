@@ -1,11 +1,15 @@
 import "./footerLinks.scss";
 import React from "react";
+import FooterButton from "./footerButton";
 
 const FooterLinks = (props) => {
     const { first, second, third, fourth, fifth, sixth } = props;
     return (
         <div className="links">
-            <h4 className="links-header">{first}</h4>
+            <div className="links-main">
+                <h4 className="links-header">{first}</h4>
+                <FooterButton />
+            </div>
             <ul className="links-list">
                 <li className="links-item">
                     <a className="links-address" href="/contact">

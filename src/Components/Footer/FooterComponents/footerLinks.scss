@@ -5,6 +5,11 @@
     padding-left: 1rem;
     width: 20%;
 
+    &-main {
+        display: flex;
+        justify-content: space-between;
+    }
+
     &-header {
         @include brandLogo(.9rem, $font-color1);
     }
@@ -19,3 +24,5 @@
         font-size: .8rem;
     }
 }
+
+@media only screen and (max-width: 976px) {}

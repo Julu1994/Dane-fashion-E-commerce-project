@@ -1,0 +1,11 @@
+@import "../../Sass/mixins.scss";
+@import "../../Sass/variables.scss";
+
+.btn {
+    cursor: pointer;
+    background: transparent;
+    padding-bottom: .5rem;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+}
