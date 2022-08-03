@@ -5,10 +5,16 @@
     position: $position;
 }
 
-@mixin brandLogo ($fontSize) {
+@mixin brandLogo ($fontSize, $logoColor) {
     font-family: $arima-font;
     font-weight: 700;
     font-size: $fontSize;
     text-decoration: none;
-    color: $font-color1;
+    color: $logoColor;
+}
+
+@mixin listStyle ($textColor) {
+    list-style: none;
+    color: $textColor;
+    margin-top: .5rem;
 }

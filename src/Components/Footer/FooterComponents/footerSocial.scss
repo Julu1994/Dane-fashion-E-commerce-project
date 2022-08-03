@@ -5,7 +5,7 @@
     padding-left: 1rem;
 
     &-header {
-        @include brandLogo(1.5rem);
+        @include brandLogo(1.5rem, $font-color1);
     }
 
     &-dot {
@@ -15,6 +15,7 @@
     &-text {
         font-family: $arima-font;
         font-size: .8rem;
+        color: $font-color2;
     }
 
     &-icons {
