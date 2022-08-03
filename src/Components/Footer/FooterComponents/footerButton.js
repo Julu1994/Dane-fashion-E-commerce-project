@@ -2,9 +2,9 @@ import "./footerButton.scss";
 import React from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 
-const FooterButton = () => {
+const FooterButton = ({ click }) => {
     return (
-        <button className="btn">
+        <button className="btn" onClick={click}>
             <AiOutlinePlus size={20} />
         </button>
     );
