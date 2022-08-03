@@ -3,6 +3,7 @@
 
 .social {
     padding-left: 1rem;
+    width: 30%;
 
     &-header {
         @include brandLogo(1.5rem, $font-color1);
@@ -13,6 +14,7 @@
     }
 
     &-text {
+        width: 60%;
         font-family: $arima-font;
         font-size: .8rem;
         color: $font-color2;

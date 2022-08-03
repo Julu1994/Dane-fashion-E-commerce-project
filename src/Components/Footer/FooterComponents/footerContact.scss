@@ -3,6 +3,7 @@
 
 .contact {
     padding-left: 1rem;
+    width: 30%;
 
     &-header {
         @include brandLogo(.9rem, $font-color1);

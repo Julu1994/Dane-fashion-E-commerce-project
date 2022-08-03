@@ -3,6 +3,7 @@
 
 .links {
     padding-left: 1rem;
+    width: 20%;
 
     &-header {
         @include brandLogo(.9rem, $font-color1);
