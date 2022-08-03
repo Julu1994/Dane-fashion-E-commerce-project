@@ -3,10 +3,11 @@ import React, { useState } from "react";
 import FooterContact from "./FooterComponents/footerContact";
 import FooterLinks from "./FooterComponents/footerLinks";
 import FooterSocial from "./FooterComponents/footerSocial";
+import FooterCatagory from "./FooterComponents/footerCatagory";
 
 const Footer = () => {
-    const [showLink, setShowLink] = useState(false);
-    const [showCatagory, setShowCatagory] = useState(false);
+    const [showLink, setShowLink] = useState(true);
+    const [showCatagory, setShowCatagory] = useState(true);
 
     const linkDropdown = () => {
         setShowLink(!showLink);
@@ -20,23 +21,10 @@ const Footer = () => {
         <div className="footer">
             <div className="footer-main">
                 <FooterSocial />
-                <FooterLinks
-                    first={"Useful Links"}
-                    second={"About Us"}
-                    third={"Location"}
-                    fourth={"Partners"}
-                    fifth={"FAQ"}
-                    sixth={"Contact"}
-                    click={linkDropdown}
-                />
-                <FooterLinks
-                    first={"Catagory"}
-                    second={"Men"}
-                    third={"Woman"}
-                    fourth={"Kids"}
-                    fifth={"New Arrivals"}
-                    sixth={"Popular Now"}
+                <FooterLinks click={linkDropdown} showlink={showLink} />
+                <FooterCatagory
                     click={catagoryDropdown}
+                    showcatagory={showCatagory}
                 />
                 <FooterContact />
             </div>

@@ -1,40 +1,39 @@
-import "./footerLinks.scss";
+import "./footerCatagory.scss";
 import React from "react";
 import FooterButton from "./footerButton";
 
-const FooterLinks = (props) => {
-    const { click, showlink } = props;
+const FooterCatagory = ({ click, showcatagory }) => {
     return (
         <div className="links">
             <div className="links-main">
-                <h4 className="links-header">Useful Links</h4>
+                <h4 className="links-header">Catagory</h4>
                 <FooterButton click={click} />
             </div>
-            {showlink && (
+            {showcatagory && (
                 <ul className="links-list">
                     <li className="links-item">
                         <a className="links-address" href="/contact">
-                            About Us
+                            Men
                         </a>
                     </li>
                     <li className="links-item">
                         <a className="links-address" href="/contact">
-                            Location
+                            Woman
                         </a>
                     </li>
                     <li className="links-item">
                         <a className="links-address" href="/contact">
-                            Partners
+                            Kids
                         </a>
                     </li>
                     <li className="links-item">
                         <a className="links-address" href="/contact">
-                            FAQ
+                            New Arrivals
                         </a>
                     </li>
                     <li className="links-item">
                         <a className="links-address" href="/contact">
-                            Contacts
+                            Popular Now
                         </a>
                     </li>
                 </ul>
@@ -43,4 +42,4 @@ const FooterLinks = (props) => {
     );
 };
 
-export default FooterLinks;
+export default FooterCatagory;
