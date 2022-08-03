@@ -1,0 +1,33 @@
+@import "../../Sass/mixins.scss";
+@import "../../Sass/variables.scss";
+
+.contact {
+    padding-left: 1rem;
+
+    &-header {
+        @include brandLogo(.9rem, $font-color1);
+    }
+
+    &-item {
+        @include listStyle($font-color2);
+        font-size: .9rem;
+        display: flex;
+        align-items: center;
+    }
+
+    &-icon {
+        color: $icon-color ;
+        margin-right: .4rem;
+    }
+
+    &-payment {
+        @include brandLogo(.7rem, $font-color2);
+        margin-top: 1rem;
+    }
+
+    &-pay {
+        width: 2rem;
+        height: auto;
+        padding-right: .2rem;
+    }
+}

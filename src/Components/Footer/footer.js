@@ -1,4 +1,5 @@
 import React from "react";
+import FooterContact from "./FooterComponents/footerContact";
 import FooterLinks from "./FooterComponents/footerLinks";
 import FooterSocial from "./FooterComponents/footerSocial";
 
@@ -22,6 +23,7 @@ const Footer = () => {
                 fifth={"New Arrivals"}
                 sixth={"Popular Now"}
             />
+            <FooterContact />
         </div>
     );
 };
