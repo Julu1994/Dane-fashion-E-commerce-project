@@ -1,7 +1,7 @@
 import "./footerLinks.scss";
 import React from "react";
 import { Link } from "react-router-dom";
-import { AiOutlinePlus } from "react-icons/ai";
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
 const FooterLinks = (props) => {
     const { click, showlink } = props;
@@ -10,7 +10,11 @@ const FooterLinks = (props) => {
             <div className="links-main">
                 <h4 className="links-header">Useful Links</h4>
                 <div className="links-btn">
-                    <AiOutlinePlus onClick={click} size={20} />
+                    {showlink ? (
+                        <AiOutlineMinus onClick={click} size={20} />
+                    ) : (
+                        <AiOutlinePlus onClick={click} size={20} />
+                    )}
                 </div>
             </div>
             {showlink && (

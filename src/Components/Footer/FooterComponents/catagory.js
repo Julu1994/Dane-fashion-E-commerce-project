@@ -1,18 +1,26 @@
 import "./catagory.scss";
 import React from "react";
 import { Link } from "react-router-dom";
-import { AiOutlinePlus } from "react-icons/ai";
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
 const Catagory = ({ clickCatagory, showcatagory }) => {
     return (
         <div className="catagory">
             <div className="catagory-main">
                 <h2 className="catagory-header">Catagory</h2>
-                <AiOutlinePlus
-                    size={20}
-                    onClick={clickCatagory}
-                    className="catagory-btn"
-                />
+                {showcatagory ? (
+                    <AiOutlineMinus
+                        size={20}
+                        onClick={clickCatagory}
+                        className="catagory-btn"
+                    />
+                ) : (
+                    <AiOutlinePlus
+                        size={20}
+                        onClick={clickCatagory}
+                        className="catagory-btn"
+                    />
+                )}
             </div>
             {showcatagory && (
                 <ul className="catagory-list">

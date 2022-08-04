@@ -3,7 +3,7 @@ import React from "react";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsTelephone } from "react-icons/bs";
-import { AiOutlinePlus } from "react-icons/ai";
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import visa from "../../../Resources/vi.png";
 import paypal from "../../../Resources/mc.png";
 import master from "../../../Resources/pp.png";
@@ -14,11 +14,19 @@ const FooterContact = (props) => {
         <div className="contact">
             <div className="contact-main">
                 <h3 className="contact-header">Contact Info</h3>
-                <AiOutlinePlus
-                    size={20}
-                    className="contact-btn"
-                    onClick={clickcontact}
-                />
+                {showcontact ? (
+                    <AiOutlineMinus
+                        size={20}
+                        className="contact-btn"
+                        onClick={clickcontact}
+                    />
+                ) : (
+                    <AiOutlinePlus
+                        size={20}
+                        className="contact-btn"
+                        onClick={clickcontact}
+                    />
+                )}
             </div>
             {showcontact && (
                 <div>
