@@ -1,6 +1,7 @@
 import "./footerLinks.scss";
 import React from "react";
-import FooterButton from "./footerButton";
+import { Link } from "react-router-dom";
+import { AiOutlinePlus } from "react-icons/ai";
 
 const FooterLinks = (props) => {
     const { click, showlink } = props;
@@ -8,34 +9,36 @@ const FooterLinks = (props) => {
         <div className="links">
             <div className="links-main">
                 <h4 className="links-header">Useful Links</h4>
-                <FooterButton click={click} />
+                <button className="links-btn">
+                    <AiOutlinePlus onClick={click} size={20} />
+                </button>
             </div>
             {showlink && (
                 <ul className="links-list">
                     <li className="links-item">
-                        <a className="links-address" href="/contact">
+                        <Link className="links-address" to="/">
                             About Us
-                        </a>
+                        </Link>
                     </li>
                     <li className="links-item">
-                        <a className="links-address" href="/contact">
+                        <Link className="links-address" to="/">
                             Location
-                        </a>
+                        </Link>
                     </li>
                     <li className="links-item">
-                        <a className="links-address" href="/contact">
+                        <Link className="links-address" to="/">
                             Partners
-                        </a>
+                        </Link>
                     </li>
                     <li className="links-item">
-                        <a className="links-address" href="/contact">
+                        <Link className="links-address" to="/">
                             FAQ
-                        </a>
+                        </Link>
                     </li>
                     <li className="links-item">
-                        <a className="links-address" href="/contact">
+                        <Link className="links-address" to="/">
                             Contacts
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             )}

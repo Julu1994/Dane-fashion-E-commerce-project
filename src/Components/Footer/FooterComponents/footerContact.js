@@ -11,12 +11,11 @@ const FooterContact = () => {
     return (
         <div className="contact">
             <h3 className="contact-header">Contact Info</h3>
-
             <ul className="contact-list">
                 <li className="contact-item">
                     <HiOutlineLocationMarker
                         className="contact-icon"
-                        size={20}
+                        size={25}
                     />
                     Kongens nytorv, Copenhagen, Denmark
                 </li>
