@@ -8,13 +8,11 @@ const Catagory = ({ clickCatagory, showcatagory }) => {
         <div className="catagory">
             <div className="catagory-main">
                 <h2 className="catagory-header">Catagory</h2>
-                <div>
-                    <AiOutlinePlus
-                        size={20}
-                        onClick={clickCatagory}
-                        className="catagory-btn"
-                    />
-                </div>
+                <AiOutlinePlus
+                    size={20}
+                    onClick={clickCatagory}
+                    className="catagory-btn"
+                />
             </div>
             {showcatagory && (
                 <ul className="catagory-list">

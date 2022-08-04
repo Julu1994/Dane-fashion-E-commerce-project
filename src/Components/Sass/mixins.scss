@@ -18,3 +18,12 @@
     color: $textColor;
     margin-top: .5rem;
 }
+
+@mixin footerBtn {
+    padding-bottom: .5rem;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+}

@@ -8,6 +8,7 @@ import Catagory from "./FooterComponents/catagory";
 const Footer = () => {
     const [showLink, setShowLink] = useState(true);
     const [showCatagory, setShowCatagory] = useState(true);
+    const [showContact, setShowContact] = useState(true);
     const deviceWidth = window.innerWidth;
 
     const linkDropdown = () => {
@@ -17,6 +18,10 @@ const Footer = () => {
     const catagoryDropdown = () => {
         setShowCatagory(!showCatagory);
         console.log("catagory");
+    };
+    const contactDropdown = () => {
+        setShowContact(!showContact);
+        console.log("showContact");
     };
     useEffect(() => {
         if (deviceWidth < 976) {
@@ -33,7 +38,10 @@ const Footer = () => {
                     clickCatagory={catagoryDropdown}
                     showcatagory={showCatagory}
                 />
-                <FooterContact />
+                <FooterContact
+                    clickcontact={contactDropdown}
+                    showcontact={showContact}
+                />
             </div>
         </div>
     );

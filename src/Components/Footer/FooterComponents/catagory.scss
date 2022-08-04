@@ -11,12 +11,7 @@
 
 
     &-btn {
-        padding-bottom: .5rem;
-        border: none;
-        cursor: pointer;
-        position: absolute;
-        top: 0;
-        right: 0;
+        @include footerBtn;
     }
 
     &-header {

@@ -9,9 +9,9 @@ const FooterLinks = (props) => {
         <div className="links">
             <div className="links-main">
                 <h4 className="links-header">Useful Links</h4>
-                <button className="links-btn">
+                <div className="links-btn">
                     <AiOutlinePlus onClick={click} size={20} />
-                </button>
+                </div>
             </div>
             {showlink && (
                 <ul className="links-list">
