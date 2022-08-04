@@ -6,12 +6,18 @@ import { AiOutlineUser } from "react-icons/ai";
 import { IoBagHandleOutline } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { TiDelete } from "react-icons/ti";
+import Loginnav from "./loginnav";
 
 const Header = () => {
     const [toggle, setToggle] = useState(false);
+    const [navlog, setNavlog] = useState(false);
 
     const toggleClick = () => {
         setToggle(!toggle);
+    };
+
+    const toggleLog = () => {
+        setNavlog(!navlog);
     };
 
     return (
@@ -61,16 +67,20 @@ const Header = () => {
             </nav>
             <div className="header-element">
                 <li className="header-element-search">
-                    <BiSearch />
+                    <BiSearch className="pointer-cursor" />
                 </li>
                 <li className="header-element-login">
-                    <AiOutlineUser />
+                    <AiOutlineUser
+                        onClick={toggleLog}
+                        className="pointer-cursor"
+                    />
                 </li>
                 <li className="header-element-cart">
-                    <IoBagHandleOutline />
+                    <IoBagHandleOutline className="pointer-cursor" />
                     <p className="header-element-badge">5</p>
                 </li>
             </div>
+            {navlog && <Loginnav />}
         </div>
     );
 };

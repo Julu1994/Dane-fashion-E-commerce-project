@@ -1,0 +1,38 @@
+@import "../Sass/variables.scss";
+@import "../Sass/mixins.scss";
+
+.loginnav {
+    width: 15%;
+    height: 6rem;
+    position: absolute;
+    top: 5rem;
+    right: 0;
+    background-color: $base-color;
+    text-align: center;
+    z-index: 600;
+    -webkit-box-shadow: 2px 2px 11px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 2px 2px 11px 2px rgba(0, 0, 0, 0.15);
+
+    &-login {
+        text-decoration: none;
+        color: $font-color1;
+    }
+
+    &-register {
+        text-decoration: none;
+        color: $font-color1;
+    }
+
+    &-text {
+        margin: 1rem auto;
+        border-radius: 5px;
+        background-color: $font-color2 ;
+        width: 80%;
+        @include brandLogo(1rem, $base-color);
+    }
+
+    &-text:hover {
+        background-color: $font-color1;
+    }
+
+}
