@@ -27,3 +27,13 @@
         font-size: .8rem;
     }
 }
+
+@media only screen and (max-width: 976px) {
+    .links {
+        width: 100%;
+
+        &-btn {
+            visibility: visible;
+        }
+    }
+}

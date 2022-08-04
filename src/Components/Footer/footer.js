@@ -27,12 +27,12 @@ const Footer = () => {
         if (deviceWidth < 976) {
             setShowLink(false);
             setShowCatagory(false);
+            setShowContact(false);
         }
     }, [deviceWidth]);
     return (
         <div className="footer">
             <div className="footer-main">
-                <FooterSocial />
                 <FooterLinks click={linkDropdown} showlink={showLink} />
                 <Catagory
                     clickCatagory={catagoryDropdown}
@@ -42,6 +42,7 @@ const Footer = () => {
                     clickcontact={contactDropdown}
                     showcontact={showContact}
                 />
+                <FooterSocial />
             </div>
         </div>
     );

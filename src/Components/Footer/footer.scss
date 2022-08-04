@@ -15,3 +15,9 @@
         justify-content: space-between;
     }
 }
+
+@media only screen and (max-width: 976px) {
+    .footer-main {
+        display: block;
+    }
+}
