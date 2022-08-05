@@ -8,15 +8,17 @@ const Login = () => {
                 <div className="login-info">
                     <h1 className="login-header">Login</h1>
                     <form>
-                        <input
-                            className="login-email"
-                            type="text"
-                            placeholder="Email"
-                            required
-                        />
+                        <div className="login-email">
+                            <input
+                                className="login-field"
+                                type="text"
+                                required
+                            />
+                            <label className="login-placeholder">Email</label>
+                        </div>
                         <input
                             className="login-password"
-                            type="text"
+                            type="password"
                             placeholder="Password"
                             required
                         />
