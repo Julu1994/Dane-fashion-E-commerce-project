@@ -16,10 +16,8 @@ export const GoogleButton = () => {
     return (
         <div className="main">
             <div className="btn bg-blue">
-                <span>
-                    <FcGoogle size={25} />{" "}
-                </span>
-                <span className="title">LOGIN WITH GOOGLE</span>
+                <FcGoogle size={25} className=" google-icon" />
+                Login with google
             </div>
         </div>
     );

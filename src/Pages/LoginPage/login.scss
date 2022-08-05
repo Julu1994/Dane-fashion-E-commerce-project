@@ -28,6 +28,11 @@
         @include brandLogo(2rem, $font-color2);
     }
 
+    &-divider {
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
     &-img {
         width: 50%;
         height: 100%;
@@ -38,5 +43,22 @@
         background-position: center;
         background-blend-mode: color-dodge;
         background-repeat: no-repeat;
+    }
+}
+
+@media only screen and (max-width: 976px) {
+    .login-main {
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .login-img {
+        visibility: hidden;
+
+
+    }
+
+    .login-info {
+        width: 100%;
     }
 }

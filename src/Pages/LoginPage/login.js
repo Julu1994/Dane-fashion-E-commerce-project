@@ -15,11 +15,9 @@ const Login = () => {
                         <Input text={"Password"} type={"password"} />
                         <Button text="Login" color={"bg-pink"} />
                     </form>
-
                     <h4 className="login-divider">or</h4>
                     <GoogleButton text={"LOGIN WITH GOOGLE"} />
                 </div>
-
                 <div className="login-img"></div>
             </div>
         </div>

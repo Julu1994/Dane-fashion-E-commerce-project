@@ -2,10 +2,18 @@
 @import "../Sass/variables.scss";
 
 .input {
-    margin: 2rem auto;
-    position: relative;
     width: 50%;
     height: 2rem;
+    margin: 2rem auto;
+
+    &-main {
+
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+    }
+
 
     &-field {
         width: 100%;
@@ -19,7 +27,7 @@
     }
 
     &-field:focus~&-placeholder {
-        top: -.6rem;
+        top: -.7rem;
         background-color: $base-color;
         padding: 0 .2rem;
     }
