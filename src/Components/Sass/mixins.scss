@@ -28,3 +28,8 @@
     top: 0;
     right: 5%;
 }
+
+@mixin boxShadow {
+    -webkit-box-shadow: 4px 4px 19px 3px rgba(133, 133, 133, 0.13);
+    box-shadow: 4px 4px 19px 3px rgba(133, 133, 133, 0.13);
+}
