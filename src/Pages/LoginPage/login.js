@@ -1,6 +1,8 @@
 import React from "react";
 import "./login.scss";
 import Input from "../../Components/GlobalComponents/input";
+import { GoogleButton } from "../../Components/GlobalComponents/button";
+import Button from "../../Components/GlobalComponents/button";
 
 const Login = () => {
     return (
@@ -11,12 +13,11 @@ const Login = () => {
                     <form>
                         <Input text={"Email"} type={"text"} />
                         <Input text={"Password"} type={"password"} />
-
-                        <button className="login-button">Login</button>
+                        <Button text="Login" color={"bg-pink"} />
                     </form>
 
                     <h4 className="login-divider">or</h4>
-                    <button className="login-google">LOGIN WITH GOOGLE</button>
+                    <GoogleButton text={"LOGIN WITH GOOGLE"} />
                 </div>
 
                 <div className="login-img"></div>
