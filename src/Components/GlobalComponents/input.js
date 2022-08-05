@@ -1,11 +1,11 @@
 import "./input.scss";
 import React from "react";
 
-const Input = ({}) => {
+const Input = ({ text, type }) => {
     return (
         <div className="input">
-            <input className="input-field" type="text" />
-            <label>{props}</label>
+            <input className="input-field" type={type} />
+            <label className="input-placeholder">{text}</label>
         </div>
     );
 };

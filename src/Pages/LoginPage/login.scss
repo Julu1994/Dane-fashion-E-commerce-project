@@ -24,39 +24,8 @@
     &-header {
         width: 20%;
         margin: 2rem auto;
+        text-align: center;
         @include brandLogo(2rem, $font-color2);
-    }
-
-    &-email {
-        margin: 2rem auto;
-        position: relative;
-        width: 50%;
-        height: 2rem;
-    }
-
-    &-field {
-        width: 100%;
-        height: 100%;
-        background: transparent;
-        border: 1px solid $secondary-color;
-        border-radius: .6rem;
-        outline: none;
-        padding: 0 .7rem;
-        font-size: .8rem;
-    }
-
-    &-field:focus~&-placeholder {
-        top: -.6rem;
-        background-color: $base-color;
-        padding: 0 .2rem;
-    }
-
-    &-placeholder {
-        position: absolute;
-        top: .5rem;
-        left: .7rem;
-        font-size: .8rem;
-
     }
 
     &-img {
