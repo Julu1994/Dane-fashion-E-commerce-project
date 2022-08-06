@@ -7,6 +7,7 @@ const Input = (props) => {
         <div className="input">
             <label className="input-main">
                 <input
+                    required
                     className="input-field"
                     type={type}
                     onChange={onchange}
