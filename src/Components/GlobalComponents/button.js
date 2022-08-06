@@ -2,10 +2,12 @@ import "./button.scss";
 import React from "react";
 import { FcGoogle } from "react-icons/fc";
 
-const Button = ({ text, color }) => {
+const Button = ({ text, color, type }) => {
     return (
         <div className="main">
-            <div className={`btn ${color}`}>{text}</div>{" "}
+            <button type={type} className={`btn ${color}`}>
+                {text}
+            </button>{" "}
         </div>
     );
 };
