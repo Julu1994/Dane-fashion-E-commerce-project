@@ -7,6 +7,7 @@ import Lifestyle from "./Pages/LifestylePage/lifestyle";
 import Header from "./Components/Header/header";
 import Footer from "./Components/Footer/footer";
 import Login from "./Pages/LoginPage/login";
+import Register from "./Pages/RegisterPage/register";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/lifestyle" element={<Lifestyle />} />
                 <Route path="/support" element={<Support />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
             </Routes>
             <Footer />
         </Router>
