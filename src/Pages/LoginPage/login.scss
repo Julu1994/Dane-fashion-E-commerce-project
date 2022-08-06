@@ -2,8 +2,7 @@
 @import "../../Components/Sass/variables.scss";
 
 .login {
-    width: 100%;
-    height: 70vh;
+    @include viewport;
 
     &-main {
         width: 60%;

@@ -1,0 +1,43 @@
+@import "../../Components/Sass/mixins.scss";
+@import "../../Components/Sass/variables.scss";
+
+.register {
+    @include viewport;
+
+    &-main {
+        width: 90%;
+        height: 100%;
+        margin: 3rem auto;
+        position: relative;
+
+    }
+
+    &-welcome {
+        position: absolute;
+        width: 30%;
+        height: 35%;
+        top: 30%;
+        left: 0;
+
+    }
+
+    &-header {
+        text-align: center;
+    }
+
+    &-title {
+        font-size: 1.5rem;
+        text-align: center;
+        color: $font-color2;
+    }
+
+
+
+    &-info {
+        width: 70%;
+        height: 100%;
+        position: absolute;
+        top: 10%;
+        right: 0;
+    }
+}

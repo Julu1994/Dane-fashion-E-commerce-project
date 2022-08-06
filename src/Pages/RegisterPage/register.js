@@ -8,7 +8,7 @@ const Register = () => {
         <div className="register">
             <div className="register-main">
                 <div className="register-welcome">
-                    <h3 className="register-header">Welcome</h3>
+                    <h3 className="register-title">Welcome</h3>
                     <h4 className="register-title">
                         We appriciate your presence
                     </h4>
