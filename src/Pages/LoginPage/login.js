@@ -3,10 +3,14 @@ import "./login.scss";
 import Input from "../../Components/GlobalComponents/input";
 import { GoogleButton } from "../../Components/GlobalComponents/button";
 import Button from "../../Components/GlobalComponents/button";
-
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../Firebase/config";
+import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
     const getEmail = (event) => {
         setEmail(event.target.value);
@@ -16,10 +20,24 @@ const Login = () => {
     };
     const userAuthenticate = (event) => {
         event.preventDefault();
+
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                // ...
+            })
+            .catch((error) => {
+                toast.error(error.message);
+            });
+        toast.success("Successful Login");
+        navigate("/");
+
         console.log(email, password);
     };
     return (
         <div className="login">
+            <ToastContainer />
             <div className="login-main">
                 <div className="login-info">
                     <h1 className="login-header">Login</h1>
