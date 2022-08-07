@@ -4,9 +4,10 @@ import Input from "../../Components/GlobalComponents/input";
 import Button from "../../Components/GlobalComponents/button";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../Firebase/config";
 
 const Register = () => {
-    const notify = () => toast("Wow so easy!");
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -26,7 +27,23 @@ const Register = () => {
 
     const register = (event) => {
         event.preventDefault();
-        console.log(name, email, password, confirmPassword);
+        if (password !== confirmPassword) {
+            toast.error("Error! Passwords didn't match", {
+                position: toast.POSITION.TOP_CENTER,
+            });
+        } else {
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    toast.success("Successfully Registered!", {
+                        position: toast.POSITION.TOP_CENTER,
+                    });
+                    console.log(user);
+                })
+                .catch((error) => {
+                    toast.error(error.message);
+                });
+        }
     };
     return (
         <div className="register">
@@ -41,7 +58,7 @@ const Register = () => {
                 <div className="register-info">
                     <h2 className="register-header"> Register Here</h2>
                     <form onSubmit={register}>
-                        <Input text={"Name"} type={"text"} onchange={getName} />
+                        {/* <Input text={"Name"} type={"text"} onchange={getName} /> */}
                         <Input
                             text={"Email"}
                             type={"text"}
@@ -63,7 +80,6 @@ const Register = () => {
                             color={"bg-pink"}
                         />
                     </form>
-                    <button onClick={notify}>click me</button>
                 </div>
             </div>
         </div>
