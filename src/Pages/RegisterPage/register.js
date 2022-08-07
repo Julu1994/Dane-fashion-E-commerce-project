@@ -6,15 +6,13 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../Firebase/config";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
-    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
-    const getName = (event) => {
-        setName(event.target.value);
-    };
+    const navigate = useNavigate();
     const getEmail = (event) => {
         setEmail(event.target.value);
     };
@@ -35,14 +33,13 @@ const Register = () => {
             createUserWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
                     const user = userCredential.user;
-                    toast.success("Successfully Registered!", {
-                        position: toast.POSITION.TOP_CENTER,
-                    });
+                    toast.success("Successfully Registered!");
                     console.log(user);
                 })
                 .catch((error) => {
                     toast.error(error.message);
                 });
+            navigate("/login");
         }
     };
     return (
@@ -58,7 +55,6 @@ const Register = () => {
                 <div className="register-info">
                     <h2 className="register-header"> Register Here</h2>
                     <form onSubmit={register}>
-                        {/* <Input text={"Name"} type={"text"} onchange={getName} /> */}
                         <Input
                             text={"Email"}
                             type={"text"}
