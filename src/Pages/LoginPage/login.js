@@ -3,7 +3,11 @@ import "./login.scss";
 import Input from "../../Components/GlobalComponents/input";
 import { GoogleButton } from "../../Components/GlobalComponents/button";
 import Button from "../../Components/GlobalComponents/button";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import {
+    GoogleAuthProvider,
+    signInWithEmailAndPassword,
+    signInWithPopup,
+} from "firebase/auth";
 import { auth } from "../../Firebase/config";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
@@ -18,22 +22,34 @@ const Login = () => {
     const getPassword = (event) => {
         setPassword(event.target.value);
     };
+
+    //Login with email and password
     const userAuthenticate = (event) => {
         event.preventDefault();
-
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                // Signed in
                 const user = userCredential.user;
-                // ...
+                console.log(user);
             })
             .catch((error) => {
                 toast.error(error.message);
             });
         toast.success("Successful Login");
         navigate("/");
+    };
 
-        console.log(email, password);
+    // Login with a google account
+    const provider = new GoogleAuthProvider();
+    const googleAuthenticate = () => {
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                const user = result.user;
+                toast.success("Successfully logged in");
+                navigate("/");
+            })
+            .catch((error) => {
+                toast.error(error.message);
+            });
     };
     return (
         <div className="login">
@@ -59,7 +75,7 @@ const Login = () => {
                         />
                     </form>
                     <h4 className="login-divider">or</h4>
-                    <GoogleButton text={"LOGIN WITH GOOGLE"} />
+                    <GoogleButton onclick={googleAuthenticate} />
                 </div>
                 <div className="login-img"></div>
             </div>

@@ -14,9 +14,9 @@ const Button = ({ text, color, type }) => {
 
 export default Button;
 
-export const GoogleButton = () => {
+export const GoogleButton = ({ onclick }) => {
     return (
-        <div className="main">
+        <div className="main" onClick={onclick}>
             <div className="btn bg-blue">
                 <FcGoogle size={25} className=" google-icon" />
                 Login with google
