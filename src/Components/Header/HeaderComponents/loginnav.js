@@ -2,7 +2,7 @@ import "./loginnav.scss";
 import React from "react";
 import { Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
-import { auth } from "../../Firebase/config";
+import { auth } from "../../../Firebase/config";
 import { ToastContainer, toast } from "react-toastify";
 
 const Loginnav = () => {

@@ -1,32 +1,25 @@
 import React, { useState, useEffect } from "react";
 import "./header.scss";
 import { Link } from "react-router-dom";
-import { BiSearch } from "react-icons/bi";
-import { AiOutlineUser } from "react-icons/ai";
-import { IoBagHandleOutline } from "react-icons/io5";
+
 import { GiHamburgerMenu } from "react-icons/gi";
 import { TiDelete } from "react-icons/ti";
-import Loginnav from "./loginnav";
+import Loginnav from "./HeaderComponents/loginnav";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../Firebase/config";
-import Avater from "./avater";
 import { useDispatch, useSelector } from "react-redux";
 import { authAction } from "../../Redux/Features/authSlice";
+import { HeaderContent } from "./HeaderComponents/headerContent";
 
 const Header = () => {
     const [toggle, setToggle] = useState(false);
-    const [navlog, setNavlog] = useState(false);
     const dispatcher = useDispatch();
-
     const toggleClick = () => {
         setToggle(!toggle);
     };
-
-    const toggleLog = () => {
-        setNavlog(!navlog);
-    };
-    const userDetails = useSelector((state) => state.user.userInfo);
-    console.log(userDetails);
+    const profileToggle = useSelector(
+        (state) => state.toggle.userProfileToggle
+    );
 
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
@@ -87,26 +80,8 @@ const Header = () => {
                     </li>
                 </ul>
             </nav>
-            <div className="header-element">
-                <li className="header-element-search">
-                    <BiSearch className="pointer-cursor" />
-                </li>
-                <li className="header-element-login">
-                    {userDetails.name ? (
-                        <Avater onclick={toggleLog} name={userDetails.name} />
-                    ) : (
-                        <AiOutlineUser
-                            onClick={toggleLog}
-                            className="pointer-cursor"
-                        />
-                    )}
-                </li>
-                <li className="header-element-cart">
-                    <IoBagHandleOutline className="pointer-cursor" />
-                    <p className="header-element-badge">5</p>
-                </li>
-            </div>
-            {navlog && <Loginnav />}
+            <HeaderContent />
+            {profileToggle && <Loginnav />}
         </div>
     );
 };
