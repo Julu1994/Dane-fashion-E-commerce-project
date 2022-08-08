@@ -16,8 +16,6 @@ import { authAction } from "../../Redux/Features/authSlice";
 const Header = () => {
     const [toggle, setToggle] = useState(false);
     const [navlog, setNavlog] = useState(false);
-    const [name, setName] = useState(null);
-    const [userEmail, setUserEmail] = useState("");
     const dispatcher = useDispatch();
 
     const toggleClick = () => {
@@ -33,9 +31,6 @@ const Header = () => {
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
-                const uid = user.uid;
-                setName(user.displayName);
-                setUserEmail(user.email);
                 dispatcher(
                     authAction.auth({
                         name: user.displayName,
@@ -43,12 +38,9 @@ const Header = () => {
                         id: user.uid,
                     })
                 );
-            } else {
-                setName(null);
-                setUserEmail("");
             }
         });
-    }, []);
+    }, [dispatcher]);
 
     return (
         <div className="header">
@@ -100,8 +92,8 @@ const Header = () => {
                     <BiSearch className="pointer-cursor" />
                 </li>
                 <li className="header-element-login">
-                    {name ? (
-                        <Avater onclick={toggleLog} name={name} />
+                    {userDetails.name ? (
+                        <Avater onclick={toggleLog} name={userDetails.name} />
                     ) : (
                         <AiOutlineUser
                             onClick={toggleLog}
