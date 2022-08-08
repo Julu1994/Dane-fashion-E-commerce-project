@@ -34,13 +34,28 @@
     }
 
     &-field:valid~&-placeholder {
-        top: -1.1rem;
+        top: -1.3rem;
         background-color: $base-color;
         padding: 0 .2rem;
         transition: .4s;
     }
 
+    &-field:-webkit-autofill~&-placeholder {
+        background-color: $base-color;
+        padding: .2rem;
+        top: -1.3rem;
+    }
+
+    &-field:-webkit-autofill {
+        box-shadow: 0 0 0 30px white inset;
+        font-family: $arima-font;
+
+    }
+
+
+
     &-placeholder {
+
         position: absolute;
         top: .5rem;
         left: .7rem;

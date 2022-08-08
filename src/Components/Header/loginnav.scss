@@ -2,12 +2,12 @@
 @import "../Sass/mixins.scss";
 
 .loginnav {
-    width: 15%;
-    height: 10rem;
+    width: 25%;
+    height: 12rem;
     position: absolute;
     top: 5rem;
     right: 0;
-    background-color: $base-color;
+    background-color: rgba(250, 250, 250, 0.837);
     text-align: center;
     z-index: 600;
     @include boxShadow;
@@ -34,4 +34,16 @@
         background-color: $font-color1;
     }
 
+}
+
+@media only screen and (max-width: 1200px) {
+    .loginnav {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .loginnav {
+        width: 100%;
+    }
 }
