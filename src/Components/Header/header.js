@@ -10,12 +10,15 @@ import Loginnav from "./loginnav";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../Firebase/config";
 import Avater from "./avater";
+import { useDispatch, useSelector } from "react-redux";
+import { authAction } from "../../Redux/Features/authSlice";
 
 const Header = () => {
     const [toggle, setToggle] = useState(false);
     const [navlog, setNavlog] = useState(false);
     const [name, setName] = useState(null);
     const [userEmail, setUserEmail] = useState("");
+    const dispatcher = useDispatch();
 
     const toggleClick = () => {
         setToggle(!toggle);
@@ -24,6 +27,8 @@ const Header = () => {
     const toggleLog = () => {
         setNavlog(!navlog);
     };
+    const userDetails = useSelector((state) => state.user.userInfo);
+    console.log(userDetails);
 
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
@@ -31,6 +36,13 @@ const Header = () => {
                 const uid = user.uid;
                 setName(user.displayName);
                 setUserEmail(user.email);
+                dispatcher(
+                    authAction.auth({
+                        name: user.displayName,
+                        email: user.email,
+                        id: user.uid,
+                    })
+                );
             } else {
                 setName(null);
                 setUserEmail("");
