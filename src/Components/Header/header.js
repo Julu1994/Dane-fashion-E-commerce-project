@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./header.scss";
 import { Link } from "react-router-dom";
 import { BiSearch } from "react-icons/bi";
@@ -7,10 +7,14 @@ import { IoBagHandleOutline } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { TiDelete } from "react-icons/ti";
 import Loginnav from "./loginnav";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../../Firebase/config";
 
 const Header = () => {
     const [toggle, setToggle] = useState(false);
     const [navlog, setNavlog] = useState(false);
+    const [name, setName] = useState("");
+    const [user, setUser] = useState("");
 
     const toggleClick = () => {
         setToggle(!toggle);
@@ -19,6 +23,19 @@ const Header = () => {
     const toggleLog = () => {
         setNavlog(!navlog);
     };
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                const uid = user.uid;
+                setName(user.displayName);
+                setUser(user.email);
+            } else {
+                setName("");
+                setUser("");
+            }
+        });
+    }, []);
 
     return (
         <div className="header">
