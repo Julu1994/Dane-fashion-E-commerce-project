@@ -9,12 +9,13 @@ import { TiDelete } from "react-icons/ti";
 import Loginnav from "./loginnav";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../Firebase/config";
+import Avater from "./avater";
 
 const Header = () => {
     const [toggle, setToggle] = useState(false);
     const [navlog, setNavlog] = useState(false);
-    const [name, setName] = useState("");
-    const [user, setUser] = useState("");
+    const [name, setName] = useState(null);
+    const [userEmail, setUserEmail] = useState("");
 
     const toggleClick = () => {
         setToggle(!toggle);
@@ -29,10 +30,10 @@ const Header = () => {
             if (user) {
                 const uid = user.uid;
                 setName(user.displayName);
-                setUser(user.email);
+                setUserEmail(user.email);
             } else {
-                setName("");
-                setUser("");
+                setName(null);
+                setUserEmail("");
             }
         });
     }, []);
@@ -87,10 +88,14 @@ const Header = () => {
                     <BiSearch className="pointer-cursor" />
                 </li>
                 <li className="header-element-login">
-                    <AiOutlineUser
-                        onClick={toggleLog}
-                        className="pointer-cursor"
-                    />
+                    {name ? (
+                        <Avater onclick={toggleLog} name={name} />
+                    ) : (
+                        <AiOutlineUser
+                            onClick={toggleLog}
+                            className="pointer-cursor"
+                        />
+                    )}
                 </li>
                 <li className="header-element-cart">
                     <IoBagHandleOutline className="pointer-cursor" />

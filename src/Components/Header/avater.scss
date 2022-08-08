@@ -1,0 +1,13 @@
+@import "../Sass/variables.scss";
+
+.avater {
+    background-color: $icon-color;
+    width: 2rem;
+    height: 1.6rem;
+    font-size: .9rem;
+    text-align: center;
+    padding-top: .4rem;
+    border-radius: 50%;
+    color: $base-color;
+    cursor: pointer;
+}
