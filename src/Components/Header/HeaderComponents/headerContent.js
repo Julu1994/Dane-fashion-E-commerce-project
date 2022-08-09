@@ -7,22 +7,27 @@ import { IoBagHandleOutline } from "react-icons/io5";
 import Avater from "./avater";
 import { toggleActions } from "../../../Redux/Features/toggleSlice";
 
-export const HeaderContent = ({ props }) => {
+export const HeaderContent = () => {
     const userDetails = useSelector((state) => state.user.userInfo);
     const dispatcher = useDispatch();
-
     const toggleDispatch = () => {
         dispatcher(toggleActions.profileToggle());
     };
-
     return (
         <div className="content">
             <li className="content-search">
                 <BiSearch className="content-cursor" />
             </li>
             <li className="content-login">
-                {userDetails.name ? (
-                    <Avater onclick={toggleDispatch} name={userDetails.name} />
+                {userDetails.id ? (
+                    <Avater
+                        onclick={toggleDispatch}
+                        name={
+                            userDetails.name
+                                ? userDetails.name
+                                : userDetails.email
+                        }
+                    />
                 ) : (
                     <AiOutlineUser
                         onClick={toggleDispatch}

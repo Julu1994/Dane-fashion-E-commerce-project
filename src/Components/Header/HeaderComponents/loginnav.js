@@ -4,8 +4,11 @@ import { Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../../Firebase/config";
 import { ToastContainer, toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { toggleActions } from "../../../Redux/Features/toggleSlice";
 
 const Loginnav = () => {
+    const dispatcher = useDispatch;
     const loggingOut = () => {
         signOut(auth)
             .then(() => {
@@ -14,6 +17,7 @@ const Loginnav = () => {
             .catch((error) => {
                 toast.error(error.message);
             });
+        dispatcher(toggleActions.profileToggle());
     };
 
     return (

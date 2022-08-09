@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./header.scss";
 import { Link } from "react-router-dom";
-
 import { GiHamburgerMenu } from "react-icons/gi";
 import { TiDelete } from "react-icons/ti";
 import Loginnav from "./HeaderComponents/loginnav";
@@ -57,7 +56,6 @@ const Header = () => {
                             className="header-nav-item"
                         />
                     )}
-
                     <li className="header-nav-item">
                         <Link className="header-nav-link" to="/">
                             Home
