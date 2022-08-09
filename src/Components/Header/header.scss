@@ -54,6 +54,16 @@
 
         }
 
+        &-btn {
+            color: $base-color;
+            width: 3.5rem;
+            height: 1.7rem;
+            border: none;
+            border-radius: 5px;
+            background-color: $icon-color;
+            cursor: pointer;
+        }
+
 
 
 

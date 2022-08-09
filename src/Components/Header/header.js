@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./header.scss";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -9,6 +9,7 @@ import { auth } from "../../Firebase/config";
 import { useDispatch, useSelector } from "react-redux";
 import { authAction } from "../../Redux/Features/authSlice";
 import { HeaderContent } from "./HeaderComponents/headerContent";
+import AdminRoute from "../AdminComponents/adminRoute";
 
 const Header = () => {
     const [toggle, setToggle] = useState(false);
@@ -70,9 +71,9 @@ const Header = () => {
                         </Link>
                     </li>
                     <li className="header-nav-item">
-                        <Link className="header-nav-link" to="/support">
-                            Support
-                        </Link>
+                        <AdminRoute>
+                            <button className="header-nav-btn">Admin</button>
+                        </AdminRoute>
                     </li>
                 </ul>
             </nav>

@@ -35,12 +35,6 @@ const Loginnav = () => {
                         onClick={loggingOut}>
                         <h3 className="loginnav-text">Logout</h3>
                     </Link>
-                    <Link
-                        to="/admin"
-                        className="loginnav-login"
-                        onClick={hideToggle}>
-                        <h3 className="loginnav-text">Admin</h3>
-                    </Link>
                 </div>
             )}
             {!isUser.id && (

@@ -1,7 +1,12 @@
 import React from "react";
+import AdminNav from "../../Components/AdminComponents/AdminNav/adminNav";
 
 const Admin = () => {
-    return <div>Admin</div>;
+    return (
+        <div>
+            <AdminNav />
+        </div>
+    );
 };
 
 export default Admin;
