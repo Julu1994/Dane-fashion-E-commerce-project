@@ -19,14 +19,20 @@ const Loginnav = () => {
             });
         dispatcher(toggleActions.profileToggle());
     };
+    const hideToggle = () => {
+        dispatcher(toggleActions.profileToggle());
+    };
 
     return (
         <div className="loginnav">
             <ToastContainer />
-            <Link to="/login" className="loginnav-login">
+            <Link to="/login" className="loginnav-login" onClick={hideToggle}>
                 <h3 className="loginnav-text">Login</h3>
             </Link>
-            <Link to="/register" className="loginnav-register">
+            <Link
+                to="/register"
+                className="loginnav-register"
+                onClick={hideToggle}>
                 <h3 className="loginnav-text">Register</h3>
             </Link>
             <Link to="/" className="loginnav-register" onClick={loggingOut}>
