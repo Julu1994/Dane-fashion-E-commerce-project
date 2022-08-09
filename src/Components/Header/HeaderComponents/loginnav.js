@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../../Firebase/config";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { toggleActions } from "../../../Redux/Features/toggleSlice";
 
@@ -12,7 +12,7 @@ const Loginnav = () => {
     const loggingOut = () => {
         signOut(auth)
             .then(() => {
-                toast("Signed out");
+                toast.success("Signed out");
             })
             .catch((error) => {
                 toast.error(error.message);
@@ -25,7 +25,6 @@ const Loginnav = () => {
 
     return (
         <div className="loginnav">
-            <ToastContainer />
             <Link to="/login" className="loginnav-login" onClick={hideToggle}>
                 <h3 className="loginnav-text">Login</h3>
             </Link>

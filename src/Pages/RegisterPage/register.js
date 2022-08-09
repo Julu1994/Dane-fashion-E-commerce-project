@@ -39,7 +39,7 @@ const Register = () => {
                 .catch((error) => {
                     toast.error(error.message);
                 });
-            navigate("/login");
+            navigate("/");
         }
     };
     return (

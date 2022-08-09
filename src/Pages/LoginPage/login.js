@@ -10,7 +10,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../../Firebase/config";
 import { ToastContainer, toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -76,6 +76,16 @@ const Login = () => {
                     </form>
                     <h4 className="login-divider">or</h4>
                     <GoogleButton onclick={googleAuthenticate} />
+                    <h5 className="login-extraLinks">
+                        <Link className="login-extraLinks" to="/reset">
+                            Forgot password ? Reset here
+                        </Link>
+                    </h5>
+                    <h5 className="login-extraLinks">
+                        <Link to="/Register" className="login-extraLinks">
+                            Don't have an account ? click here
+                        </Link>
+                    </h5>
                 </div>
                 <div className="login-img"></div>
             </div>

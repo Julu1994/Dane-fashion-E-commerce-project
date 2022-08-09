@@ -20,19 +20,17 @@ const Header = () => {
         (state) => state.toggle.userProfileToggle
     );
 
-    useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                dispatcher(
-                    authAction.auth({
-                        name: user.displayName,
-                        email: user.email,
-                        id: user.uid,
-                    })
-                );
-            }
-        });
-    }, [dispatcher]);
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            dispatcher(
+                authAction.auth({
+                    name: user.displayName,
+                    email: user.email,
+                    id: user.uid,
+                })
+            );
+        }
+    });
 
     return (
         <div className="header">
