@@ -1,0 +1,6 @@
+@import "../../Sass/mixins.scss";
+@import "../../Sass/variables.scss";
+
+.adminHome {
+    @include adminPageLayout;
+}

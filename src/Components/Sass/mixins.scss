@@ -38,3 +38,14 @@
     -webkit-box-shadow: 4px 4px 19px 3px rgba(133, 133, 133, 0.13);
     box-shadow: 4px 4px 19px 3px rgba(133, 133, 133, 0.13);
 }
+
+@mixin adminPageLayout {
+    background-color: $base-color ;
+    width: 75%;
+    height: 100vh;
+    padding: 2% 0 0 2%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(5rem);
+}

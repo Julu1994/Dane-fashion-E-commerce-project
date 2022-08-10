@@ -10,6 +10,7 @@ import Login from "./Pages/LoginPage/login";
 import Register from "./Pages/RegisterPage/register";
 import { Reset } from "./Pages/PasswordReset/reset";
 import Admin from "./Pages/AdminPage/admin";
+import AdminRoute from "./Components/AdminComponents/adminRoute";
 
 function App() {
     return (
@@ -23,7 +24,14 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/reset" element={<Reset />} />
-                <Route path="/admin" element={<Admin />} />
+                <Route
+                    path="/admin/*"
+                    element={
+                        <AdminRoute>
+                            <Admin />
+                        </AdminRoute>
+                    }
+                />
             </Routes>
             <Footer />
         </Router>
