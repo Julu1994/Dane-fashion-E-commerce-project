@@ -1,6 +1,7 @@
 import "./postProducts.scss";
 import React, { useState } from "react";
 import Input from "../../GlobalComponents/input";
+import Select from "../../GlobalComponents/select";
 
 const PostProducts = () => {
     const [name, setName] = useState("");
@@ -8,6 +9,7 @@ const PostProducts = () => {
     const [imgUrl, setImgUrl] = useState("");
     const [price, setPrice] = useState("");
     const [catagory, setCatagory] = useState("");
+    console.log(catagory);
     const [description, setDescription] = useState("");
 
     const [product, setProduct] = useState({
@@ -38,6 +40,14 @@ const PostProducts = () => {
     const catagoryHandler = (event) => setCatagory(event.target.value);
     const descriptionHandler = (event) => setDescription(event.target.value);
 
+    const options = [
+        "popular",
+        "new arrivals",
+        "regular",
+        "expensive",
+        "offer",
+    ];
+
     return (
         <div className="post">
             <form>
@@ -56,9 +66,10 @@ const PostProducts = () => {
                     text={"Image URL"}
                     onchange={imgUrlHandler}
                 />
-                <Input
-                    type={"text"}
-                    text={"Products Catagory"}
+                <Select
+                    options={options}
+                    label={"Catagory"}
+                    selectName={"ProductCaragory"}
                     onchange={catagoryHandler}
                 />
                 <Input
