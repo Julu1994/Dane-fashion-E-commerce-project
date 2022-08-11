@@ -2,6 +2,7 @@ import "./postProducts.scss";
 import React, { useState } from "react";
 import Input from "../../GlobalComponents/input";
 import Select from "../../GlobalComponents/select";
+import Button from "../../GlobalComponents/button";
 
 const PostProducts = () => {
     const [name, setName] = useState("");
@@ -16,12 +17,12 @@ const PostProducts = () => {
         name: "",
         id: "",
         imgUrl: "",
-        price: "",
+        price: null,
         id: "",
         catagory: "",
         description: "",
     });
-    const b = (event) => {
+    const productObjMaker = (event) => {
         event.preventDefault();
         setProduct({
             name,
@@ -41,6 +42,7 @@ const PostProducts = () => {
     const descriptionHandler = (event) => setDescription(event.target.value);
 
     const options = [
+        "----SELECT THE PRODUCT CATAGORY----",
         "popular",
         "new arrivals",
         "regular",
@@ -50,7 +52,7 @@ const PostProducts = () => {
 
     return (
         <div className="post">
-            <form>
+            <form onSubmit={productObjMaker}>
                 <Input
                     type={"text"}
                     text={"Product Name"}
@@ -68,7 +70,6 @@ const PostProducts = () => {
                 />
                 <Select
                     options={options}
-                    label={"Catagory"}
                     selectName={"ProductCaragory"}
                     onchange={catagoryHandler}
                 />
@@ -82,7 +83,7 @@ const PostProducts = () => {
                     text={" Product Description"}
                     onchange={descriptionHandler}
                 />
-                <button onClick={b}>Submit</button>
+                <Button color={"bg-pink"} type={"submit"} text={"SUBMIT"} />
             </form>
         </div>
     );
