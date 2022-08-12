@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import Input from "../../GlobalComponents/input";
 import Select from "../../GlobalComponents/select";
 import Button from "../../GlobalComponents/button";
+import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+import { storage } from "../../../Firebase/config";
+import { toast } from "react-toastify";
 
 const PostProducts = () => {
     const [name, setName] = useState("");
@@ -34,15 +37,42 @@ const PostProducts = () => {
         });
     };
     console.log(product);
+    console.log(imgUrl);
     const nameHandler = (event) => setName(event.target.value);
-    const imgUrlHandler = (event) => setImgUrl(event.target.value);
+    const imgUrlHandler = (event) => event.target.value;
+
     const priceHandler = (event) => setPrice(event.target.value);
     const idHandler = (event) => setId(event.target.value);
     const catagoryHandler = (event) => setCatagory(event.target.value);
     const descriptionHandler = (event) => setDescription(event.target.value);
 
+    const imgHandler = (event) => {
+        const imgFile = event.target.files[0];
+        console.log(imgFile);
+        const storageRef = ref(storage, `ProductImages/${imgFile.name}`);
+        const uploadTask = uploadBytesResumable(storageRef, imgFile);
+
+        //********* */
+        uploadTask.on(
+            "state_changed",
+            (snapshot) => {
+                const progress =
+                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                toast("Image upload is " + progress + "% done");
+            },
+            (error) => {
+                toast.error(error);
+            },
+            () => {
+                getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                    setImgUrl(downloadURL);
+                });
+            }
+        );
+    };
+
     const options = [
-        "----SELECT THE PRODUCT CATAGORY----",
+        "--SELECT THE PRODUCT CATAGORY--",
         "popular",
         "new arrivals",
         "regular",
@@ -63,7 +93,7 @@ const PostProducts = () => {
                     text={"Product Price"}
                     onchange={priceHandler}
                 />
-                <Input type={"file"} />
+                <Input type={"file"} onchange={imgHandler} />
                 <Input
                     type={"text"}
                     text={"Image URL"}
