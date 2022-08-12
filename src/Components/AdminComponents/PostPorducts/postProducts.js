@@ -4,45 +4,35 @@ import Input from "../../GlobalComponents/input";
 import Select from "../../GlobalComponents/select";
 import Button from "../../GlobalComponents/button";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import { storage } from "../../../Firebase/config";
+import { database, storage } from "../../../Firebase/config";
 import { toast } from "react-toastify";
+import { addDoc, collection } from "firebase/firestore";
 
 const PostProducts = () => {
     const [name, setName] = useState("");
-    const [id, setId] = useState("");
     const [imgUrl, setImgUrl] = useState("");
     const [price, setPrice] = useState("");
     const [catagory, setCatagory] = useState("");
     console.log(catagory);
     const [description, setDescription] = useState("");
 
-    const [product, setProduct] = useState({
-        name: "",
-        id: "",
-        imgUrl: "",
-        price: null,
-        id: "",
-        catagory: "",
-        description: "",
-    });
     const productObjMaker = (event) => {
         event.preventDefault();
-        setProduct({
-            name,
-            id,
-            imgUrl,
-            price,
-            catagory,
-            description,
-        });
+        try {
+            const docRef = addDoc(collection(database, "shopProducts"), {
+                name,
+                imgUrl,
+                price,
+                catagory,
+                description,
+            });
+            toast.success("product is succesfully added to databae");
+        } catch (error) {
+            toast.error(error);
+        }
     };
-    console.log(product);
-    console.log(imgUrl);
     const nameHandler = (event) => setName(event.target.value);
-    const imgUrlHandler = (event) => event.target.value;
-
-    const priceHandler = (event) => setPrice(event.target.value);
-    const idHandler = (event) => setId(event.target.value);
+    const priceHandler = (event) => setPrice(parseInt(event.target.value));
     const catagoryHandler = (event) => setCatagory(event.target.value);
     const descriptionHandler = (event) => setDescription(event.target.value);
 
@@ -52,7 +42,7 @@ const PostProducts = () => {
         const storageRef = ref(storage, `ProductImages/${imgFile.name}`);
         const uploadTask = uploadBytesResumable(storageRef, imgFile);
 
-        //********* */
+        //**********//
         uploadTask.on(
             "state_changed",
             (snapshot) => {
@@ -94,21 +84,12 @@ const PostProducts = () => {
                     onchange={priceHandler}
                 />
                 <Input type={"file"} onchange={imgHandler} />
-                <Input
-                    type={"text"}
-                    text={"Image URL"}
-                    onchange={imgUrlHandler}
-                />
                 <Select
                     options={options}
                     selectName={"ProductCaragory"}
                     onchange={catagoryHandler}
                 />
-                <Input
-                    type={"text"}
-                    text={" Product ID"}
-                    onchange={idHandler}
-                />
+
                 <Input
                     type={"text"}
                     text={" Product Description"}
