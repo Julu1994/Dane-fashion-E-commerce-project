@@ -63,6 +63,7 @@ const PostProducts = () => {
                     text={"Product Price"}
                     onchange={priceHandler}
                 />
+                <Input type={"file"} />
                 <Input
                     type={"text"}
                     text={"Image URL"}
