@@ -1,33 +1,15 @@
-import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
-import React, { useState, useEffect } from "react";
-import { toast } from "react-toastify";
-import { database } from "../../../Firebase/config";
-import "./viewProducts.scss";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getProductsData } from "../../../Redux/actionCreators";
 
 const ViewProducts = () => {
-    const [products, setProducts] = useState([]);
-    console.log(products);
-    console.log(products[2]?.name);
+    const dispatch = useDispatch();
+    const selector = useSelector((state) => state.products.item);
+
     useEffect(() => {
-        getProdductsData();
+        dispatch(getProductsData());
     }, []);
-    const getProdductsData = () => {
-        try {
-            const productsRef = collection(database, "shopProducts");
 
-            const q = query(productsRef, orderBy("name", "desc"));
-
-            onSnapshot(q, (querySnapshot) => {
-                const productsList = querySnapshot.docs.map((item) => ({
-                    id: item.id,
-                    ...item.data(),
-                }));
-                setProducts(productsList);
-            });
-        } catch (error) {
-            toast.error(error.message);
-        }
-    };
     return <div className="view"> ViewProducts</div>;
 };
 

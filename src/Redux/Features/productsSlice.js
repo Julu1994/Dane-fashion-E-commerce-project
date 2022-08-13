@@ -1,14 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    products: {
-        name: "",
-        price: 0,
-        imgUrl: "",
-        catagory: "",
-        id: "",
-        description: "",
-    },
+    item: [
+        {
+            name: "",
+            price: 5,
+            imgUrl: "",
+            catagory: "",
+            id: "",
+            description: "",
+        },
+    ],
 };
 
 export const shopProducts = createSlice({
@@ -16,8 +18,8 @@ export const shopProducts = createSlice({
     initialState,
     reducers: {
         productsData(state, action) {
-            state.products = action.payload;
+            state.item = action.payload;
         },
     },
 });
-export const productsAction = shopProducts.actions;
+export const productsActions = shopProducts.actions;
