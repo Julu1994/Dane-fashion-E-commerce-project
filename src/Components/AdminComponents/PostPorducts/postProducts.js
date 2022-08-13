@@ -11,6 +11,7 @@ import { addDoc, collection } from "firebase/firestore";
 const PostProducts = () => {
     const [name, setName] = useState("");
     const [imgUrl, setImgUrl] = useState("");
+    const [id, setId] = useState("");
     const [price, setPrice] = useState("");
     const [catagory, setCatagory] = useState("");
     console.log(catagory);
@@ -24,6 +25,7 @@ const PostProducts = () => {
                 imgUrl,
                 price,
                 catagory,
+                id,
                 description,
             });
             toast.success("product is succesfully added to databae");
@@ -34,6 +36,7 @@ const PostProducts = () => {
     const nameHandler = (event) => setName(event.target.value);
     const priceHandler = (event) => setPrice(parseInt(event.target.value));
     const catagoryHandler = (event) => setCatagory(event.target.value);
+    const idHandler = (event) => setId(event.target.value);
     const descriptionHandler = (event) => setDescription(event.target.value);
 
     const imgHandler = (event) => {
@@ -89,6 +92,7 @@ const PostProducts = () => {
                     selectName={"ProductCaragory"}
                     onchange={catagoryHandler}
                 />
+                <Input type={"text"} text={"ID"} onchange={idHandler} />
 
                 <Input
                     type={"text"}
