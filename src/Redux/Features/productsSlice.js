@@ -7,6 +7,7 @@ const initialState = {
             price: 5,
             imgUrl: "",
             catagory: "",
+            type: "",
             id: "",
             description: "",
         },

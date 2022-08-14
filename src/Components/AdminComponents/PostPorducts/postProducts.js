@@ -14,6 +14,7 @@ const PostProducts = () => {
     const [id, setId] = useState("");
     const [price, setPrice] = useState("");
     const [catagory, setCatagory] = useState("");
+    const [type, setType] = useState("");
     console.log(catagory);
     const [description, setDescription] = useState("");
 
@@ -25,6 +26,7 @@ const PostProducts = () => {
                 imgUrl,
                 price,
                 catagory,
+                type,
                 id,
                 description,
             });
@@ -37,6 +39,7 @@ const PostProducts = () => {
     const priceHandler = (event) => setPrice(parseInt(event.target.value));
     const catagoryHandler = (event) => setCatagory(event.target.value);
     const idHandler = (event) => setId(event.target.value);
+    const typeHsndler = (event) => setType(event.target.value);
     const descriptionHandler = (event) => setDescription(event.target.value);
 
     const imgHandler = (event) => {
@@ -92,6 +95,7 @@ const PostProducts = () => {
                     selectName={"ProductCaragory"}
                     onchange={catagoryHandler}
                 />
+                <Input type={"text"} text={"Type"} onchange={typeHsndler} />
                 <Input type={"text"} text={"ID"} onchange={idHandler} />
 
                 <Input
