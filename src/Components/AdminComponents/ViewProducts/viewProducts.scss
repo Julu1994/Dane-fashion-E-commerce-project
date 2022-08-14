@@ -2,5 +2,24 @@
 @import "../../Sass/variables.scss";
 
 .view {
+    padding-top: 3%;
     @include adminPageLayout;
+
+    &-table {
+        width: 100%;
+        height: 100%;
+    }
+
+    &-main {
+        background-color: $lightBlue;
+    }
+
+    &-row {
+        background-color: $background3;
+    }
+
+    &-img {
+        width: 5rem;
+        height: auto;
+    }
 }

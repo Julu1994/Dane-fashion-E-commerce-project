@@ -41,9 +41,10 @@
 
 @mixin adminPageLayout {
     background-color: $base-color ;
-    width: 75%;
-    height: 100vh;
-    padding: 2% 0 0 2%;
+    width: 80%;
+    height: auto;
+    padding-right: 2%;
+    ;
     position: absolute;
     top: 0;
     right: 0;
