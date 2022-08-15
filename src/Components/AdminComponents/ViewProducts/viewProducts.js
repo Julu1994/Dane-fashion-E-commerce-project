@@ -6,6 +6,7 @@ import { MdOutlineDelete, MdOutlineModeEditOutline } from "react-icons/md";
 import { database, storage } from "../../../Firebase/config";
 import { deleteDoc, doc } from "firebase/firestore";
 import { toast } from "react-toastify";
+import Notiflix from "notiflix";
 import { deleteObject, ref } from "firebase/storage";
 
 const ViewProducts = () => {
@@ -14,8 +15,7 @@ const ViewProducts = () => {
 
     useEffect(() => {
         dispatch(getProductsData());
-    }, []);
-
+    }, [dispatch]);
     const deleteHandler = async (id, url) => {
         try {
             await deleteDoc(doc(database, "shopProducts", id));
@@ -26,6 +26,24 @@ const ViewProducts = () => {
         } catch (error) {
             toast(error.message);
         }
+    };
+
+    const deleteConfirm = (id, url) => {
+        Notiflix.Confirm.show(
+            "Delete Confirm",
+            "Do you want to delete the product?",
+            "Delete",
+            "Cancel",
+            function okCb() {
+                deleteHandler(id, url);
+            },
+
+            {
+                width: "20rem",
+                borderRadius: "8px",
+                // etc...
+            }
+        );
     };
 
     return (
@@ -61,7 +79,7 @@ const ViewProducts = () => {
                                     <MdOutlineDelete
                                         size={25}
                                         onClick={() => {
-                                            deleteHandler(item.id, item.imgUrl);
+                                            deleteConfirm(item.id, item.imgUrl);
                                         }}
                                     />
                                 </td>
