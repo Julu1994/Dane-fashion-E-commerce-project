@@ -72,7 +72,16 @@ const Header = () => {
                     </li>
                     <li className="header-nav-item">
                         <AdminRoute>
-                            <button className="header-nav-btn">Admin</button>
+                            <button className="header-nav-btn">
+                                <Link
+                                    style={{
+                                        textDecoration: "none",
+                                        color: "white",
+                                    }}
+                                    to="/admin/home">
+                                    Admin
+                                </Link>
+                            </button>
                         </AdminRoute>
                     </li>
                 </ul>
