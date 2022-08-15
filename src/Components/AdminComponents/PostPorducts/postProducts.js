@@ -21,7 +21,7 @@ const PostProducts = () => {
     const productObjMaker = (event) => {
         event.preventDefault();
         try {
-            const docRef = addDoc(collection(database, "shopProducts"), {
+            addDoc(collection(database, "shopProducts"), {
                 name,
                 imgUrl,
                 price,
@@ -31,6 +31,7 @@ const PostProducts = () => {
                 description,
             });
             toast.success("product is succesfully added to databae");
+            event.target.reset();
         } catch (error) {
             toast.error(error);
         }
@@ -82,7 +83,9 @@ const PostProducts = () => {
                 <Input
                     type={"text"}
                     text={"Product Name"}
-                    onchange={nameHandler}
+                    onchange={(event) => {
+                        nameHandler(event);
+                    }}
                 />
                 <Input
                     type={"text"}
