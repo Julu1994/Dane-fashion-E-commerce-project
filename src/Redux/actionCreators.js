@@ -15,6 +15,8 @@ export const getProductsData = () => {
                     id: item.id,
                     ...item.data(),
                 }));
+                console.log(productsList, "this is the test string");
+
                 dispatch(productsActions.productsData(productsList));
             });
         } catch (error) {

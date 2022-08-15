@@ -21,6 +21,7 @@ const ViewProducts = () => {
             await deleteDoc(doc(database, "shopProducts", id));
             const reference = ref(storage, url);
             await deleteObject(reference);
+
             toast("The product has been deleted");
         } catch (error) {
             toast(error.message);
@@ -60,7 +61,7 @@ const ViewProducts = () => {
                                     <MdOutlineDelete
                                         size={25}
                                         onClick={() => {
-                                            deleteHandler(item.id, item.url);
+                                            deleteHandler(item.id, item.imgUrl);
                                         }}
                                     />
                                 </td>

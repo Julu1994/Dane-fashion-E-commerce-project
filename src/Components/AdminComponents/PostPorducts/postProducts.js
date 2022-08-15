@@ -11,7 +11,7 @@ import { addDoc, collection } from "firebase/firestore";
 const PostProducts = () => {
     const [name, setName] = useState("");
     const [imgUrl, setImgUrl] = useState("");
-    const [id, setId] = useState("");
+    const [quantity, setQuantity] = useState("");
     const [price, setPrice] = useState("");
     const [catagory, setCatagory] = useState("");
     const [type, setType] = useState("");
@@ -27,7 +27,7 @@ const PostProducts = () => {
                 price,
                 catagory,
                 type,
-                id,
+                quantity,
                 description,
             });
             toast.success("product is succesfully added to databae");
@@ -38,7 +38,7 @@ const PostProducts = () => {
     const nameHandler = (event) => setName(event.target.value);
     const priceHandler = (event) => setPrice(parseInt(event.target.value));
     const catagoryHandler = (event) => setCatagory(event.target.value);
-    const idHandler = (event) => setId(event.target.value);
+    const quantityHandler = (event) => setQuantity(event.target.value);
     const typeHsndler = (event) => setType(event.target.value);
     const descriptionHandler = (event) => setDescription(event.target.value);
 
@@ -96,7 +96,11 @@ const PostProducts = () => {
                     onchange={catagoryHandler}
                 />
                 <Input type={"text"} text={"Type"} onchange={typeHsndler} />
-                <Input type={"text"} text={"ID"} onchange={idHandler} />
+                <Input
+                    type={"text"}
+                    text={"Quantity"}
+                    onchange={quantityHandler}
+                />
 
                 <Input
                     type={"text"}
