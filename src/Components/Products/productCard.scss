@@ -3,13 +3,24 @@
 
 .card {
     color: $icon-color;
-    width: 25%;
+    width: 30%;
+    height: 100%;
+    background-color: rgb(246, 246, 246);
+    border-radius: 2rem;
+
+    &-inner {
+        width: 100%;
+        height: 70%;
+        background: $pink-background2;
+        text-align: center;
+    }
 
 
     &-productimage {
-        width: 5rem;
+        margin-top: 10%;
+        width: 50%;
         height: auto;
-        background-color: rgb(154, 208, 97);
+
     }
 
     &-header {

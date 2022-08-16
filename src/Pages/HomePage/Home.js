@@ -19,7 +19,7 @@ function Home() {
     return (
         <div>
             <Banner />
-            <div>
+            <div className="home-popularProducts">
                 {popularProducts.map((item) => {
                     return (
                         <ProductCard
