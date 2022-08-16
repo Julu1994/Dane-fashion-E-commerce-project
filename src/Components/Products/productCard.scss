@@ -3,4 +3,23 @@
 
 .card {
     color: $icon-color;
+    width: 25%;
+
+
+    &-productimage {
+        width: 5rem;
+        height: auto;
+        background-color: rgb(154, 208, 97);
+    }
+
+    &-header {
+        color: $font-color1;
+
+    }
+
+    &-btn {
+        background-color: $secondary-color;
+        border: none;
+        color: $base-color;
+    }
 }
