@@ -29,33 +29,32 @@ function PopularProducts() {
                 modules={[FreeMode]}
                 className="mySwiper"
                 slidesPerView={3}
-                spaceBetween={5}
+                spaceBetween={15}
                 breakpoints={{
-                    // when window width is >= 640px
-                    640: {
-                        width: 640,
+                    350: {
                         slidesPerView: 1,
-                        spaceBetween: 5,
+                        spaceBetween: 20,
                     },
-                    // when window width is >= 768px
+                    375: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
                     768: {
-                        width: 768,
                         slidesPerView: 2,
-                        spaceBetween: 5,
+                        spaceBetween: 40,
                     },
                     1024: {
-                        width: 768,
                         slidesPerView: 3,
-                        spaceBetween: 5,
+                        spaceBetween: 50,
                     },
                 }}>
                 {popularProducts.map((item) => {
                     return (
                         <SwiperSlide>
                             <ProductCard
-                            // productName={item.name}
-                            // productImg={item.imgUrl}
-                            // price={item.price}
+                                productName={item.name}
+                                productImg={item.imgUrl}
+                                price={item.price}
                             />
                         </SwiperSlide>
                     );
