@@ -28,24 +28,24 @@ function PopularProducts() {
                 grabCursor={true}
                 modules={[FreeMode]}
                 className="mySwiper"
-                slidesPerView={3}
-                spaceBetween={15}
+                slidesPerView={5}
+                spaceBetween={10}
                 breakpoints={{
                     350: {
-                        slidesPerView: 1,
-                        spaceBetween: 20,
+                        slidesPerView: 2,
+                        spaceBetween: 0.2,
                     },
                     375: {
-                        slidesPerView: 1,
-                        spaceBetween: 20,
-                    },
-                    768: {
                         slidesPerView: 2,
-                        spaceBetween: 40,
+                        spaceBetween: 0.2,
+                    },
+                    750: {
+                        slidesPerView: 3,
+                        spaceBetween: 10,
                     },
                     1024: {
-                        slidesPerView: 3,
-                        spaceBetween: 50,
+                        slidesPerView: 4,
+                        spaceBetween: 15,
                     },
                 }}>
                 {popularProducts.map((item) => {

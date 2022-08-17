@@ -6,28 +6,34 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Rating from "../rating";
 
 const ProductCard = (props) => {
     const { productName, productImg, price } = props;
     return (
         <div className="card">
-            <Card
-                sx={{ maxWidth: 215, borderRadius: " 1.5rem", maxHeight: 380 }}>
+            <Card sx={{ maxWidth: 235, borderRadius: " 1.5rem" }}>
                 <CardMedia
                     component="img"
-                    height="210"
+                    height="180"
                     image={productImg}
                     alt="green iguana"
                 />
-                <CardContent>
-                    <Typography sx={{ maxHeight: ".5rem" }}>
+                <CardContent sx={{ maxHeight: ".5rem" }}>
+                    <Typography sx={{ maxHeight: ".2rem" }} variant="p">
                         {productName}
                     </Typography>
                 </CardContent>
+
                 <CardActions>
-                    <Button sx={{ color: "red" }} size="small">
-                        {price}
+                    <Button
+                        variant="outlined"
+                        color="error"
+                        size="small"
+                        sx={{ marginBottom: ".5rem" }}>
+                        {price}$
                     </Button>
+                    <Rating />
                 </CardActions>
             </Card>
         </div>
