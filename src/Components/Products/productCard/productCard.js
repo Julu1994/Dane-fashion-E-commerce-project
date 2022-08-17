@@ -10,22 +10,27 @@ import Typography from "@mui/material/Typography";
 const ProductCard = (props) => {
     const { productName, productImg, price } = props;
     return (
-        <Card sx={{ maxWidth: 345 }}>
-            <CardMedia
-                component="img"
-                height="140"
-                image={productImg}
-                alt="green iguana"
-            />
-            <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                    {productName}
-                </Typography>
-            </CardContent>
-            <CardActions>
-                <Button size="small">{price}</Button>
-            </CardActions>
-        </Card>
+        <div className="card">
+            <Card
+                sx={{ maxWidth: 215, borderRadius: " 1.5rem", maxHeight: 380 }}>
+                <CardMedia
+                    component="img"
+                    height="210"
+                    image={productImg}
+                    alt="green iguana"
+                />
+                <CardContent>
+                    <Typography sx={{ maxHeight: ".5rem" }}>
+                        {productName}
+                    </Typography>
+                </CardContent>
+                <CardActions>
+                    <Button sx={{ color: "red" }} size="small">
+                        {price}
+                    </Button>
+                </CardActions>
+            </Card>
+        </div>
     );
 };
 

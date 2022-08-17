@@ -50,7 +50,7 @@ function PopularProducts() {
                 }}>
                 {popularProducts.map((item) => {
                     return (
-                        <SwiperSlide>
+                        <SwiperSlide className="swiper-box">
                             <ProductCard
                                 productName={item.name}
                                 productImg={item.imgUrl}
