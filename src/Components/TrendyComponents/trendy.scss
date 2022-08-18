@@ -8,14 +8,38 @@
     margin-bottom: 5rem;
 
     &-left {
+
         width: 49.9%;
         height: 100%;
         background-image: url(../../Resources/trendy2.webp);
         background-repeat: no-repeat;
-        background-position: top left;
-        background-attachment: fixed;
+        // background-position: bottom left;
+        // background-attachment: fixed;
+        position: absolute;
         top: 0;
         left: 0;
+
+        &:hover {
+            background-image: linear-gradient(to right bottom, #35323275, #eaf6f554), url(../../Resources/trendy2.webp);
+        }
+
+        &-main {
+            color: $base-color;
+            font-size: 3rem;
+            font-weight: 700;
+            position: absolute;
+            top: 40%;
+            left: 35%;
+        }
+
+        &-title {
+            color: $base-color;
+            font-size: 1.2rem;
+            font-weight: 300;
+            position: absolute;
+            top: 48%;
+            left: 35%;
+        }
     }
 
     &-right {
@@ -23,10 +47,50 @@
         height: 100%;
         background-image: url(../../Resources/trendyImG.webp);
         background-repeat: no-repeat;
-        background-position: top right;
-        background-attachment: fixed;
+        // background-position: bottom right;
+        // background-attachment: fixed;
         position: absolute;
         top: 0;
         right: 0;
+
+
+        &:hover {
+            background-image: linear-gradient(to right bottom, #35323275, #eaf6f554), url(../../Resources/trendyImG.webp);
+        }
+
+        &-main {
+            color: $base-color;
+            font-size: 3rem;
+            font-weight: 700;
+            position: absolute;
+            top: 40%;
+            left: 35%;
+        }
+
+        &-title {
+            color: $base-color;
+            font-size: 1.2rem;
+            font-weight: 300;
+            position: absolute;
+            top: 48%;
+            left: 35%;
+        }
     }
+
+    &-link {
+
+        &-btn {
+            width: 12%;
+            position: absolute;
+            left: 44%;
+            top: 85%;
+            background-color: $base-color;
+            border: none;
+            height: 6%;
+            font-size: .9rem;
+            cursor: pointer;
+            border-radius: .2rem;
+        }
+    }
+
 }
