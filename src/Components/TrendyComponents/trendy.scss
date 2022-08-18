@@ -4,16 +4,17 @@
 .trendy {
     position: relative;
     width: 100%;
-    height: 70vh;
+    height: 45rem;
     margin-bottom: 5rem;
 
     &-left {
-
         width: 49.9%;
         height: 100%;
+
         background-image: url(../../Resources/trendy2.webp);
         background-repeat: no-repeat;
-        // background-position: bottom left;
+        background-position: 50% 0;
+        background-size: cover;
         // background-attachment: fixed;
         position: absolute;
         top: 0;
@@ -24,29 +25,39 @@
         }
 
         &-main {
-            color: $base-color;
-            font-size: 3rem;
-            font-weight: 700;
             position: absolute;
             top: 40%;
             left: 35%;
+
+            &-header {
+                color: $base-color;
+                font-size: 3vw;
+                font-weight: 700;
+
+            }
+
+            &-title {
+                color: $base-color;
+                font-size: 1.2vw;
+                font-weight: 300;
+            }
         }
 
-        &-title {
-            color: $base-color;
-            font-size: 1.2rem;
-            font-weight: 300;
-            position: absolute;
-            top: 48%;
-            left: 35%;
-        }
+
+
+
+
+
     }
 
     &-right {
-        width: 49.9%;
         height: 100%;
+        width: 49.9%;
+
         background-image: url(../../Resources/trendyImG.webp);
         background-repeat: no-repeat;
+        background-position: 50% 0;
+        background-size: cover;
         // background-position: bottom right;
         // background-attachment: fixed;
         position: absolute;
@@ -59,28 +70,34 @@
         }
 
         &-main {
-            color: $base-color;
-            font-size: 3rem;
-            font-weight: 700;
+
+
+
             position: absolute;
             top: 40%;
             left: 35%;
+
+            &-header {
+                color: $base-color;
+                font-size: 3vw;
+                font-weight: 700;
+
+            }
+
+            &-title {
+                color: $base-color;
+                font-size: 1.2vw;
+                font-weight: 300;
+            }
         }
 
-        &-title {
-            color: $base-color;
-            font-size: 1.2rem;
-            font-weight: 300;
-            position: absolute;
-            top: 48%;
-            left: 35%;
-        }
+
     }
 
     &-link {
 
         &-btn {
-            width: 12%;
+            width: 7rem;
             position: absolute;
             left: 44%;
             top: 85%;
@@ -92,5 +109,46 @@
             border-radius: .2rem;
         }
     }
+
+}
+
+@media only screen and (max-width: 940px) {
+    .trendy {
+        height: 55rem;
+    }
+
+    .trendy-left {
+        width: 100%;
+        height: 50%;
+        top: 0;
+        left: 0;
+        background-size: cover;
+    }
+
+    .trendy-right {
+        width: 100%;
+        height: 50%;
+        top: 52%;
+        left: 0;
+        background-size: cover;
+    }
+
+    .trendy-right-main-header {
+        font-size: 5vw;
+    }
+
+    .trendy-right-main-title {
+        font-size: 2.2vw;
+    }
+
+    .trendy-left-main-header {
+        font-size: 5vw;
+
+    }
+
+    .trendy-left-main-title {
+        font-size: 2.2vw;
+    }
+
 
 }

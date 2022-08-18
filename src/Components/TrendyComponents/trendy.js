@@ -8,10 +8,15 @@ const Trendy = () => {
         <div className="trendy">
             <Link to="/lifestyle">
                 <div className="trendy-left">
-                    <h2 className="trendy-left-main">Scandinavian</h2>
-                    <p className="trendy-left-title">
-                        Informal, sophisticated look
-                    </p>
+                    <div className="trendy-left-main">
+                        <h2 className="trendy-left-main-header">
+                            Scandinavian
+                        </h2>
+                        <p className="trendy-left-main-title">
+                            Informal, sophisticated look
+                        </p>
+                    </div>
+
                     <Link className="trendy-link" to="/lifestyle">
                         <button className="trendy-link-btn">See more</button>
                     </Link>
@@ -19,8 +24,13 @@ const Trendy = () => {
             </Link>
             <Link to="/lifestyle">
                 <div className="trendy-right">
-                    <h2 className="trendy-right-main">Sportswear</h2>
-                    <p className="trendy-right-title">Finess, yoga, running</p>
+                    <div className="trendy-right-main">
+                        <h2 className="trendy-right-main-header">Sportswear</h2>
+                        <p className="trendy-right-main-title">
+                            Finess, yoga, running
+                        </p>
+                    </div>
+
                     <Link className="trendy-link" to="/lifestyle">
                         <button className="trendy-link-btn">See more</button>
                     </Link>
