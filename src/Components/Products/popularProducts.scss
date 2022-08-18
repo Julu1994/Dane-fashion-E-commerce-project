@@ -1,0 +1,25 @@
+.popular {
+    width: 75%;
+    margin: 5rem auto;
+}
+
+@media only screen and (max-width: 760px) {
+    .popular {
+        width: 90%;
+        margin: 2rem auto;
+    }
+}
+
+@media only screen and (max-width: 676px) {
+    .popular {
+        width: 98%;
+        margin: 2rem auto;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .popular {
+        width: 100%;
+        margin: 2.5rem auto;
+    }
+}

@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@100;200;400;700;800&display=swap');
 @import "../src/Components/Sass/variables.scss";
+@import url("./Components/Sass/mixins.scss");
+@import url("./Components/Sass/variables.scss");
 
 * {
     margin: 0;
     padding: 0;
     font-family: $arima-font;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
 }
