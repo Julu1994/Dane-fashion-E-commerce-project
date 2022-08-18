@@ -28,23 +28,27 @@ function PopularProducts() {
                 grabCursor={true}
                 modules={[FreeMode]}
                 className="mySwiper"
-                slidesPerView={5}
+                slidesPerView={6}
                 spaceBetween={10}
                 breakpoints={{
-                    350: {
+                    360: {
                         slidesPerView: 2,
-                        spaceBetween: 0.2,
+                        spaceBetween: 0,
                     },
                     375: {
                         slidesPerView: 2,
-                        spaceBetween: 0.2,
+                        spaceBetween: 0,
                     },
-                    750: {
+                    736: {
                         slidesPerView: 3,
                         spaceBetween: 10,
                     },
-                    1024: {
+                    1264: {
                         slidesPerView: 4,
+                        spaceBetween: 15,
+                    },
+                    1524: {
+                        slidesPerView: 5,
                         spaceBetween: 15,
                     },
                 }}>
