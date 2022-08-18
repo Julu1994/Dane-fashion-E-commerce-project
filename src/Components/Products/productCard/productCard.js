@@ -8,6 +8,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Rating from "../rating";
+import { padding } from "@mui/system";
 
 const ProductCard = (props) => {
     const [isHovering, setIsHovering] = useState(false);
@@ -54,7 +55,7 @@ const ProductCard = (props) => {
                         variant="outlined"
                         color="error"
                         size="small"
-                        sx={{ marginBottom: ".5rem" }}>
+                        sx={{ marginBottom: ".5rem", padding: "0" }}>
                         {price}$
                     </Button>
                     <Rating />
