@@ -1,0 +1,63 @@
+@import "../Sass/mixins.scss";
+@import "../Sass/variables.scss";
+
+
+.statics {
+    width: 75%;
+    height: 20rem;
+    margin: 1rem auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    &-payment {
+        min-width: 30%;
+        text-align: center;
+    }
+
+    &-pIcon {
+        color: $icon-color;
+    }
+
+    &-pTitle {
+        font-size: .9rem;
+        color: $font-color2;
+    }
+
+    &-delivery {
+        min-width: 30%;
+        text-align: center;
+    }
+
+    &-dIcon {
+        color: $icon-color;
+    }
+
+    &-dTitle {
+        font-size: .9rem;
+        color: $font-color2;
+    }
+
+    &-return {
+        min-width: 30%;
+        text-align: center;
+    }
+
+    &-rIcon {
+        color: $icon-color;
+    }
+
+    &-rTitle {
+        font-size: .9rem;
+        color: $font-color2;
+    }
+
+}
+
+.statics::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 91, 91, 0.505);
+}
