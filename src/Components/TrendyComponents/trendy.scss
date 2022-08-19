@@ -1,0 +1,154 @@
+@import "../Sass/mixins.scss";
+@import "../Sass//variables.scss";
+
+.trendy {
+    position: relative;
+    width: 100%;
+    height: 45rem;
+    margin-bottom: 5rem;
+
+    &-left {
+        width: 49.9%;
+        height: 100%;
+
+        background-image: url(../../Resources/trendy2.webp);
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        background-size: cover;
+        // background-attachment: fixed;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &:hover {
+            background-image: linear-gradient(to right bottom, #35323275, #eaf6f554), url(../../Resources/trendy2.webp);
+        }
+
+        &-main {
+            position: absolute;
+            top: 40%;
+            left: 35%;
+
+            &-header {
+                color: $base-color;
+                font-size: 3vw;
+                font-weight: 700;
+
+            }
+
+            &-title {
+                color: $base-color;
+                font-size: 1.2vw;
+                font-weight: 300;
+            }
+        }
+
+
+
+
+
+
+    }
+
+    &-right {
+        height: 100%;
+        width: 49.9%;
+
+        background-image: url(../../Resources/trendyImG.webp);
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        background-size: cover;
+        // background-position: bottom right;
+        // background-attachment: fixed;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+
+        &:hover {
+            background-image: linear-gradient(to right bottom, #35323275, #eaf6f554), url(../../Resources/trendyImG.webp);
+        }
+
+        &-main {
+
+
+
+            position: absolute;
+            top: 40%;
+            left: 35%;
+
+            &-header {
+                color: $base-color;
+                font-size: 3vw;
+                font-weight: 700;
+
+            }
+
+            &-title {
+                color: $base-color;
+                font-size: 1.2vw;
+                font-weight: 300;
+            }
+        }
+
+
+    }
+
+    &-link {
+
+        &-btn {
+            width: 7rem;
+            position: absolute;
+            left: 44%;
+            top: 85%;
+            background-color: $base-color;
+            border: none;
+            height: 6%;
+            font-size: .9rem;
+            cursor: pointer;
+            border-radius: .2rem;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 940px) {
+    .trendy {
+        height: 55rem;
+    }
+
+    .trendy-left {
+        width: 100%;
+        height: 50%;
+        top: 0;
+        left: 0;
+        background-size: cover;
+    }
+
+    .trendy-right {
+        width: 100%;
+        height: 50%;
+        top: 52%;
+        left: 0;
+        background-size: cover;
+    }
+
+    .trendy-right-main-header {
+        font-size: 5vw;
+    }
+
+    .trendy-right-main-title {
+        font-size: 2.2vw;
+    }
+
+    .trendy-left-main-header {
+        font-size: 5vw;
+
+    }
+
+    .trendy-left-main-title {
+        font-size: 2.2vw;
+    }
+
+
+}

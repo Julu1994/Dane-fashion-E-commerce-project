@@ -10,11 +10,11 @@ import { FreeMode } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 
-function PopularProducts() {
+function Products({ catagory }) {
     const dispatch = useDispatch();
     const productsData = useSelector((state) => state.products.item);
     const popularProducts = productsData.filter(
-        (item) => item.catagory === "regular"
+        (item) => item.catagory === catagory
     );
 
     useEffect(() => {
@@ -68,4 +68,4 @@ function PopularProducts() {
     );
 }
 
-export default PopularProducts;
+export default Products;
