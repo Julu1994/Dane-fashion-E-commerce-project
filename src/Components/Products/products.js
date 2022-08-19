@@ -5,7 +5,6 @@ import "./popularProducts.scss";
 import ProductCard from "./productCard/productCard";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode } from "swiper";
 
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -24,9 +23,6 @@ function Products({ catagory }) {
     return (
         <div className="popular">
             <Swiper
-                FreeMode={true}
-                grabCursor={true}
-                modules={[FreeMode]}
                 className="mySwiper"
                 slidesPerView={6}
                 spaceBetween={10}
@@ -54,11 +50,12 @@ function Products({ catagory }) {
                 }}>
                 {popularProducts.map((item) => {
                     return (
-                        <SwiperSlide className="swiper-box">
+                        <SwiperSlide className="swiper-box" key={item.id}>
                             <ProductCard
                                 productName={item.name}
                                 productImg={item.imgUrl}
                                 price={item.price}
+                                id={item.id}
                             />
                         </SwiperSlide>
                     );

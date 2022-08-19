@@ -11,6 +11,7 @@ import Register from "./Pages/RegisterPage/register";
 import { Reset } from "./Pages/PasswordReset/reset";
 import Admin from "./Pages/AdminPage/admin";
 import AdminRoute from "./Components/AdminComponents/adminRoute";
+import SingleProduct from "./Pages/SingleProduct/singleProduct";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
 
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/product/:id" element={<SingleProduct />} />
                 <Route path="/shop" element={<Shop />} />
                 <Route path="/lifestyle" element={<Lifestyle />} />
                 <Route path="/support" element={<Support />} />
