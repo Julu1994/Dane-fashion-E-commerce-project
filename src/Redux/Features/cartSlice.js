@@ -30,7 +30,19 @@ export const cart = createSlice({
                     (isExist.totalItemQuantity = isExist.totalItemQuantity + 1);
             }
         },
-        removeFromCart(state, action) {},
+        removeFromCart(state, action) {
+            const removedItem = action.payload;
+            state.totalAmount = state.totalAmount - removedItem.price;
+            state.totalQuantity = state.totalQuantity - 1;
+            if (removedItem == 0) {
+                state.items.filter((i) => i.id !== removedItem.id);
+            } else {
+                removedItem.totalItemPrice =
+                    removedItem.totalItemPrice - removedItem.price;
+                removedItem.totalItemQuantity =
+                    removedItem.totalItemQuantity - 1;
+            }
+        },
     },
 });
 export const cartActions = shopProducts.actions;
