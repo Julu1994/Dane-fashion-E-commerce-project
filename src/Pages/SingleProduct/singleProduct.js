@@ -23,6 +23,7 @@ const SingleProduct = () => {
                         price={item.price}
                         productImg={item.imgUrl}
                         description={item.description}
+                        productObj={item}
                     />
                 );
             })}

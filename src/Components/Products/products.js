@@ -52,6 +52,7 @@ function Products({ catagory }) {
                     return (
                         <SwiperSlide className="swiper-box" key={item.id}>
                             <ProductCard
+                                productObj={item}
                                 productName={item.name}
                                 productImg={item.imgUrl}
                                 price={item.price}

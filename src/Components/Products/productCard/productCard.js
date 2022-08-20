@@ -20,6 +20,7 @@ const ProductCard = (props) => {
     const handleMouseLeave = () => {
         setIsHovering(false);
     };
+
     return (
         <div
             className="card"

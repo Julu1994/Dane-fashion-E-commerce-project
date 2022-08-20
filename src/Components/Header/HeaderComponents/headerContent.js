@@ -9,6 +9,9 @@ import { toggleActions } from "../../../Redux/Features/toggleSlice";
 
 export const HeaderContent = () => {
     const userDetails = useSelector((state) => state.user.userInfo);
+    const cartQuantity = useSelector((state) => state.cartItem.totalQuantity);
+    const cartP = useSelector((state) => state.cartItem);
+    console.log(cartP, "from CarÅÅÅ");
     const dispatcher = useDispatch();
     const toggleDispatch = () => {
         dispatcher(toggleActions.profileToggle());
@@ -37,7 +40,7 @@ export const HeaderContent = () => {
             </li>
             <li className="content-cart">
                 <IoBagHandleOutline className="content-cursor" />
-                <p className="content-badge">5</p>
+                <p className="content-badge">{cartQuantity}</p>
             </li>
         </div>
     );
