@@ -1,0 +1,16 @@
+.cart {
+    position: absolute;
+    top: 5rem;
+    right: 5.5%;
+    width: 20%;
+    height: 20rem;
+    background-color: green;
+    z-index: 1000;
+}
+
+.item {
+    &-pic {
+        width: 1.5rem;
+        height: 3rem;
+    }
+}

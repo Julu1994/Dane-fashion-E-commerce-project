@@ -20,6 +20,7 @@ export const cart = createSlice({
                 state.items.push({
                     id: selectedItem.id,
                     name: selectedItem.name,
+                    img: selectedItem.imgUrl,
                     price: selectedItem.price,
                     totalItemPrice: selectedItem.price,
                     totalItemQuantity: 1,
