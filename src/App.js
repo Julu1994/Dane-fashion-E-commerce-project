@@ -12,12 +12,15 @@ import { Reset } from "./Pages/PasswordReset/reset";
 import Admin from "./Pages/AdminPage/admin";
 import AdminRoute from "./Components/AdminComponents/adminRoute";
 import SingleProduct from "./Pages/SingleProduct/singleProduct";
+import { useSelector } from "react-redux";
+import Cart from "./Pages/CartPage/cart";
 
 function App() {
+    const showCart = useSelector((state) => state.cartToggle.cartShow);
     return (
         <Router>
             <Header />
-
+            {showCart && <Cart />}
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/product/:id" element={<SingleProduct />} />
