@@ -1,12 +1,17 @@
 import "./cart.scss";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CartItem from "../../Components/Cart/cartItem";
 import Button from "@mui/material/Button";
+import { cartActions } from "../../Redux/Features/cartSlice";
 
 const Cart = () => {
     const cartProduct = useSelector((state) => state.cartItem);
-    console.log(cartProduct, "this is cart product... ");
+    const dispatch = useDispatch();
+
+    const cartEmpty = () => {
+        dispatch(cartActions.emptyTheCart());
+    };
     return (
         <div className="cart">
             {cartProduct.items?.map((i) => {
@@ -34,6 +39,7 @@ const Cart = () => {
                 Go to checkout
             </Button>
             <Button
+                onClick={cartEmpty}
                 className="cart-checkout"
                 variant="outlined"
                 color="error"
