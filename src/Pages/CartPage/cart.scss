@@ -1,0 +1,15 @@
+@import "../../Components/Sass/mixins.scss";
+@import "../../Components/Sass/variables.scss";
+
+.cart {
+    position: absolute;
+    top: 5rem;
+    right: 5.5%;
+    width: 20%;
+    background-color: $base-color;
+    z-index: 1000;
+    @include boxShadow;
+    // &-checkout {
+    //     margin: .5rem auto;
+    // }
+}

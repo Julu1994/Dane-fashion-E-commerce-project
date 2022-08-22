@@ -1,16 +1,23 @@
 import "./cartItem.scss";
 import React from "react";
+import CartButton from "./cartButton";
 
 const CartItem = (props) => {
-    const { name, id, img, totalItemQuantity, totalItemPrice } = props;
+    const { name, img, totalItemQuantity, totalItemPrice } = props;
     return (
-        <div className="cart">
-            <div className="item" key={id}>
+        <div className="item-main">
+            <div className="item">
                 <img className="item-pic" src={img} alt="product" />
-                <h3 className="item-name">{name}</h3>
-                <p>{totalItemPrice}$</p>
-                <p>Quantity: {totalItemQuantity}</p>
-                <h2>Total</h2>
+                <div className="item-info">
+                    <p className="item-name">{name}</p>
+                    <p className="item-price">Price: {totalItemPrice}$</p>
+                    <p className="item-quantity">
+                        Quantity: {totalItemQuantity}
+                    </p>
+                </div>
+                <div className="item-btn">
+                    <CartButton />
+                </div>
             </div>
         </div>
     );
