@@ -3,7 +3,7 @@ import React from "react";
 import CartButton from "./cartButton";
 
 const CartItem = (props) => {
-    const { name, img, totalItemQuantity, totalItemPrice } = props;
+    const { name, img, totalItemQuantity, totalItemPrice, id } = props;
     return (
         <div className="item-main">
             <div className="item">
@@ -16,7 +16,7 @@ const CartItem = (props) => {
                     </p>
                 </div>
                 <div className="item-btn">
-                    <CartButton />
+                    <CartButton itemID={id} />
                 </div>
             </div>
         </div>
