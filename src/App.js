@@ -14,6 +14,7 @@ import AdminRoute from "./Components/AdminComponents/adminRoute";
 import SingleProduct from "./Pages/SingleProduct/singleProduct";
 import { useSelector } from "react-redux";
 import Cart from "./Pages/CartPage/cart";
+import Checkout from "./Pages/CheckoutPage/checkout";
 
 function App() {
     const showCart = useSelector((state) => state.cartToggle.cartShow);
@@ -30,6 +31,7 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/reset" element={<Reset />} />
+                <Route path="/checkout" element={<Checkout />} />
                 <Route
                     path="/admin/*"
                     element={
