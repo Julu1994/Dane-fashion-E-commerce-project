@@ -11,20 +11,27 @@ import Register from "./Pages/RegisterPage/register";
 import { Reset } from "./Pages/PasswordReset/reset";
 import Admin from "./Pages/AdminPage/admin";
 import AdminRoute from "./Components/AdminComponents/adminRoute";
+import SingleProduct from "./Pages/SingleProduct/singleProduct";
+import { useSelector } from "react-redux";
+import Cart from "./Pages/CartPage/cart";
+import Checkout from "./Pages/CheckoutPage/checkout";
 
 function App() {
+    const showCart = useSelector((state) => state.cartToggle.cartShow);
     return (
         <Router>
             <Header />
-
+            {showCart && <Cart />}
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/product/:id" element={<SingleProduct />} />
                 <Route path="/shop" element={<Shop />} />
                 <Route path="/lifestyle" element={<Lifestyle />} />
                 <Route path="/support" element={<Support />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/reset" element={<Reset />} />
+                <Route path="/checkout" element={<Checkout />} />
                 <Route
                     path="/admin/*"
                     element={

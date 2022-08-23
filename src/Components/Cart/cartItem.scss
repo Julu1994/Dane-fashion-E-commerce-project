@@ -1,0 +1,40 @@
+@import "../Sass/mixins.scss";
+@import "../Sass/variables.scss";
+
+.item {
+    background-color: $base-color;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    column-gap: .5rem;
+    width: 95%;
+    margin: .5rem auto;
+
+
+
+    &-pic {
+        width: 4rem;
+        height: 5.5rem;
+    }
+
+    &-info {
+        flex-grow: 4;
+    }
+
+    &-btn {
+        width: 20%;
+        flex-shrink: 1;
+
+    }
+
+}
+
+.item-main::after {
+    margin: 0 auto;
+    display: block;
+    content: "";
+    height: 1px;
+    width: 80%;
+    background-color: $background3;
+
+}

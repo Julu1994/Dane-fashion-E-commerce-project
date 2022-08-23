@@ -6,12 +6,18 @@ import { AiOutlineUser } from "react-icons/ai";
 import { IoBagHandleOutline } from "react-icons/io5";
 import Avater from "./avater";
 import { toggleActions } from "../../../Redux/Features/toggleSlice";
+import { cartToggleActions } from "../../../Redux/Features/cartToggleSlice";
 
 export const HeaderContent = () => {
     const userDetails = useSelector((state) => state.user.userInfo);
+    const cartQuantity = useSelector((state) => state.cartItem.totalQuantity);
     const dispatcher = useDispatch();
+    const dispatch = useDispatch();
     const toggleDispatch = () => {
         dispatcher(toggleActions.profileToggle());
+    };
+    const showingHidingCart = () => {
+        dispatch(cartToggleActions.showingCart());
     };
     return (
         <div className="content">
@@ -36,8 +42,11 @@ export const HeaderContent = () => {
                 )}
             </li>
             <li className="content-cart">
-                <IoBagHandleOutline className="content-cursor" />
-                <p className="content-badge">5</p>
+                <IoBagHandleOutline
+                    className="content-cursor"
+                    onClick={showingHidingCart}
+                />
+                <p className="content-badge">{cartQuantity}</p>
             </li>
         </div>
     );

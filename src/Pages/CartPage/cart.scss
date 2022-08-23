@@ -1,0 +1,39 @@
+@import "../../Components/Sass/mixins.scss";
+@import "../../Components/Sass/variables.scss";
+
+.cart {
+    position: absolute;
+    top: 5rem;
+    width: 95%;
+    right: 0;
+    background-color: $base-color;
+    z-index: 1000;
+    @include boxShadow;
+
+    &-empty {
+        text-align: center;
+        color: $font-color2;
+    }
+}
+
+@media only screen and (min-width: 660px) {
+    .cart {
+        width: 50%;
+        right: 0;
+    }
+}
+
+
+@media only screen and (min-width: 940px) {
+    .cart {
+        width: 40%;
+        right: 5.5%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .cart {
+        right: 5.5%;
+        width: 20%;
+    }
+}
