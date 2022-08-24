@@ -5,9 +5,9 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Success from "./Steps/success";
 import FirstStep from "./Steps/firstStep";
-import { Button } from "@mui/material";
+import { Button, StepButton } from "@mui/material";
 
-const steps = ["Delivery Information", "Delivery Method", "Payment"];
+const steps = ["Delivery Information", "Confirm", "Payment"];
 
 const Checkout = () => {
     const [activeStep, setActiveStep] = React.useState(0);
@@ -45,6 +45,10 @@ const Checkout = () => {
         newCompleted[activeStep] = true;
         setCompleted(newCompleted);
         handleNext();
+        if (completedSteps() === totalSteps()) {
+            setActiveStep(0);
+            setCompleted({});
+        }
     };
     const handleReset = () => {
         setActiveStep(0);
@@ -54,10 +58,14 @@ const Checkout = () => {
     return (
         <div>
             <Box sx={{ width: "100%" }}>
-                <Stepper activeStep={1} alternativeLabel>
-                    {steps.map((label) => (
-                        <Step key={label}>
-                            <StepLabel>{label}</StepLabel>
+                <Stepper nonLinear activeStep={activeStep}>
+                    {steps.map((labe, index) => (
+                        <Step key={labe} completed={completed[index]}>
+                            <StepButton
+                                color="inherit"
+                                onClick={handleStep(index)}>
+                                {labe}
+                            </StepButton>
                         </Step>
                     ))}
                 </Stepper>
@@ -69,8 +77,10 @@ const Checkout = () => {
                     </>
                 )}
             </Box>
-            <Button onClick={handleNext} sx={{ mr: 1 }}>
-                Next
+            <Button onClick={handleComplete}>
+                {completedSteps() === totalSteps() - 1
+                    ? "Finish"
+                    : "Complete Step"}
             </Button>
             <Button
                 color="inherit"
