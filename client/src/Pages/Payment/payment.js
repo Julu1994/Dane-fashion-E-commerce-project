@@ -6,11 +6,8 @@ import visa from "../../Resources/vi.png";
 import master from "../../Resources/mc.png";
 import "./payment.scss";
 import { useSelector } from "react-redux";
-import env from "react-dotenv";
 
-const PUBLIC_KEY = env.STRIPE_PUBLIC_KEY;
-
-const promise = loadStripe(PUBLIC_KEY);
+const promise = loadStripe("XXXXXXXXXXXXXXXXX");
 
 export default function StripeContainer() {
     const totalAmount = useSelector((state) => state.cartItem.totalAmount);
