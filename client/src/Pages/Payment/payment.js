@@ -1,15 +1,29 @@
-import "./payment.scss";
-import React from "react";
-import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import React from "react";
+import StripeForm from "./stripeForm";
+import visa from "../../Resources/vi.png";
+import master from "../../Resources/mc.png";
+import "./payment.scss";
+import { useSelector } from "react-redux";
+import env from "react-dotenv";
 
-const stripePromise = loadStripe(process.env.STRIPE_PUBLIC_KEY);
-const Payment = () => {
+const PUBLIC_KEY = env.STRIPE_PUBLIC_KEY;
+
+const promise = loadStripe(PUBLIC_KEY);
+
+export default function StripeContainer() {
+    const totalAmount = useSelector((state) => state.cartItem.totalAmount);
     return (
-        <Elements stripe={stripePromise}>
-            <CheckoutForm />
-        </Elements>
+        <div className="payment">
+            <p className="price">Oreder in total: {totalAmount}.00$</p>
+            <Elements stripe={promise}>
+                <StripeForm />
+            </Elements>
+            <div>
+                <img src={visa} alt="visa" className="vc" />
+                <img src={master} alt="master" className="mc" />
+            </div>
+        </div>
     );
-};
-
-export default Payment;
+}

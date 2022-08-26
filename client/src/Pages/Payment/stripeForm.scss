@@ -1,0 +1,19 @@
+.form {
+    width: 100%;
+}
+
+.payment {
+    &-btn {
+        width: 100%;
+        background-color: rgb(147, 123, 220);
+        border: none;
+        border-radius: .2rem;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgb(70, 36, 174);
+        }
+    }
+}

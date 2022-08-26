@@ -15,6 +15,7 @@ import SingleProduct from "./Pages/SingleProduct/singleProduct";
 import { useSelector } from "react-redux";
 import Cart from "./Pages/CartPage/cart";
 import Checkout from "./Pages/CheckoutPage/checkout";
+import CardPayment from "./Pages/Payment/cardPayment";
 
 function App() {
     const showCart = useSelector((state) => state.cartToggle.cartShow);
@@ -32,6 +33,8 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 <Route path="/reset" element={<Reset />} />
                 <Route path="/checkout" element={<Checkout />} />
+                <Route path="/payment" element={<CardPayment />} />
+
                 <Route
                     path="/admin/*"
                     element={

@@ -1,28 +1,28 @@
 const express = require("express");
 const app = express();
-const env = require("dotenv");
+const dotenv = require("dotenv");
+dotenv.config();
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-env.config();
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 app.use(cors());
 
 app.post("/stripe-payment", cors(), async (req, res) => {
-    let { amount, id, email } = req.body;
+    let { amount, id, receipt_email } = req.body;
     try {
-        const intentPayment = await stripe.paymentIntents.create({
-            amount: amount * 100,
+        const payment = await stripe.paymentIntents.create({
+            amount,
             currency: "USD",
-            description: "Dane.com",
+            description: "Successful payment at Dane.com",
             payment_method: id,
             confirm: true,
-            receipt_email: email,
+            receipt_email,
         });
-        console.log(intentPayment, "");
+        console.log("Payment", payment);
         res.json({
             message: "Payment successful",
             success: true,
@@ -30,12 +30,12 @@ app.post("/stripe-payment", cors(), async (req, res) => {
     } catch (error) {
         console.log("Error", error);
         res.json({
-            message: "Payment failed",
+            message: "Error",
             success: false,
         });
     }
 });
 
 app.listen(process.env.PORT || 4000, () => {
-    console.log("Sever is up and running on port 4000!!!");
+    console.log("Sever is up and running on port 4000");
 });
