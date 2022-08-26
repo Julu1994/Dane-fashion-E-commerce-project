@@ -19,6 +19,8 @@ import CardPayment from "./Pages/Payment/cardPayment";
 
 function App() {
     const showCart = useSelector((state) => state.cartToggle.cartShow);
+    const a = process.env.REACT_APP_STRIPE_SECRET_KEY;
+    console.log(a);
     return (
         <Router>
             <Header />
