@@ -8,11 +8,14 @@ import { StepLabel } from "@mui/material";
 import DeliveryInfo from "../../Components/CheckoutComponents/deliveryInfo";
 import ConfirmOrder from "../../Components/CheckoutComponents/confirmOrder";
 import CardPayment from "../Payment/cardPayment";
+import { useDispatch, useSelector } from "react-redux";
+import { stepActions } from "../../Redux/Features/stepSlice";
 
 const steps = ["Delivery Info", "Confirm the order", "Payment"];
 
 const Checkout = () => {
-    const [activeStepp, setActiveStepp] = React.useState(0);
+    const activeStepp = useSelector((state) => state.stepping.activeStep);
+    const dispatch = useDispatch();
 
     const totalSteps = () => {
         return steps.length;
@@ -24,17 +27,8 @@ const Checkout = () => {
     const iscomplete = () => {
         return activeStepp === totalSteps();
     };
-
-    const handleNext = () => {
-        setActiveStepp((step) => step + 1);
-    };
-
     const handleBack = () => {
-        setActiveStepp((prevActiveStep) => prevActiveStep - 1);
-    };
-
-    const handleReset = () => {
-        setActiveStepp(0);
+        dispatch(stepActions.decreaseStep());
     };
 
     return (
@@ -59,14 +53,12 @@ const Checkout = () => {
                                 pt: 2,
                             }}>
                             <Box sx={{ flex: "1 1 auto" }} />
-                            <Button onClick={handleReset}>Reset</Button>
+                            <Button>Reset</Button>
                         </Box>
                     </React.Fragment>
                 ) : (
                     <React.Fragment>
-                        {activeStepp === 0 && (
-                            <DeliveryInfo props={handleNext} />
-                        )}
+                        {activeStepp === 0 && <DeliveryInfo />}
                         {activeStepp === 1 && <ConfirmOrder />}
                         {activeStepp === 2 && <CardPayment />}
                         <Box
@@ -83,7 +75,7 @@ const Checkout = () => {
                                 Back
                             </Button>
                             <Box sx={{ flex: "1 1 auto" }} />
-                            <Button onClick={handleNext}>next</Button>
+                            <Button>next</Button>
                         </Box>
                     </React.Fragment>
                 )}

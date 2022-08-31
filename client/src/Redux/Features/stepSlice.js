@@ -11,6 +11,9 @@ export const StepSlice = createSlice({
         increaseStep(state) {
             state.activeStep = state.activeStep + 1;
         },
+        decreaseStep(state) {
+            state.activeStep = state.activeStep - 1;
+        },
         resetStep(state) {
             state.activeStep = 0;
         },
