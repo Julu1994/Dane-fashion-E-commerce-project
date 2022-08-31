@@ -10,7 +10,7 @@ const env = process.env.REACT_APP_STRIPE_SECRET_KEY;
 
 const promise = loadStripe(env);
 
-export default function StripeContainer() {
+const Payment = () => {
     const totalAmount = useSelector((state) => state.cartItem.totalAmount);
     return (
         <div className="payment">
@@ -24,4 +24,5 @@ export default function StripeContainer() {
             </div>
         </div>
     );
-}
+};
+export default Payment;
