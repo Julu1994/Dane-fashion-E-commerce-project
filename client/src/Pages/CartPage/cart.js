@@ -30,7 +30,7 @@ const Cart = () => {
             {cartProduct.items.length > 0 ? (
                 <>
                     <h3>Total</h3>
-                    <Link to="/payment" style={{ textDecoration: "none" }}>
+                    <Link to="/checkout" style={{ textDecoration: "none" }}>
                         <Button
                             className="cart-checkout"
                             variant="contained"

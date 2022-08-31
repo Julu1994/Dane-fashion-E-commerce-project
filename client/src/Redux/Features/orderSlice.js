@@ -16,7 +16,7 @@ export const orderSlice = createSlice({
     name: "order",
     initialState,
     reducers: {
-        productsData(state, action) {
+        setOrder(state, action) {
             state.order = action.payload;
         },
     },
