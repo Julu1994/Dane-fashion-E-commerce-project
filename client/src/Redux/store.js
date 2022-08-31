@@ -3,6 +3,7 @@ import { userAuth } from "./Features/authSlice";
 import { cart } from "./Features/cartSlice";
 import { cartToggleSlice } from "./Features/cartToggleSlice";
 import { shopProducts } from "./Features/productsSlice";
+import { StepSlice } from "./Features/stepSlice";
 import { toggleSlice } from "./Features/toggleSlice";
 
 export const store = configureStore({
@@ -12,5 +13,6 @@ export const store = configureStore({
         products: shopProducts.reducer,
         cartItem: cart.reducer,
         cartToggle: cartToggleSlice.reducer,
+        stepping: StepSlice.reducer,
     },
 });
