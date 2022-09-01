@@ -7,9 +7,9 @@ import Typography from "@mui/material/Typography";
 import { StepLabel } from "@mui/material";
 import DeliveryInfo from "../../Components/CheckoutComponents/deliveryInfo";
 import ConfirmOrder from "../../Components/CheckoutComponents/confirmOrder";
-import CardPayment from "../Payment/cardPayment";
 import { useDispatch, useSelector } from "react-redux";
 import { stepActions } from "../../Redux/Features/stepSlice";
+import CardPayment from "../../Components/CheckoutComponents/cardPayment";
 
 const steps = ["Delivery Info", "Confirm the order", "Payment"];
 
