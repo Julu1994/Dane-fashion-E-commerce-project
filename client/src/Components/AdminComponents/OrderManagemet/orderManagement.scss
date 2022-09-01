@@ -3,4 +3,11 @@
 
 .orders {
     @include adminPageLayout;
+    margin-top: 3rem;
+
+    &-item {
+        background-color: rgb(237, 237, 237);
+        margin-top: .5rem;
+        padding: 2rem;
+    }
 }

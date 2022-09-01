@@ -1,22 +1,23 @@
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { toast } from "react-toastify";
 import { database } from "../Firebase/config";
-import { productsActions } from "./Features/productsSlice";
+import { orderHistoryActions } from "./Features/orderHistorySlice";
 
-export const getProductsData = () => {
+export const getOrderData = () => {
     return async function (dispatch) {
         try {
-            const productsRef = collection(database, "shopProducts");
+            const orderRef = collection(database, "orders");
 
-            const q = query(productsRef, orderBy("name", "desc"));
+            const q = query(orderRef, orderBy("order", "desc"));
 
             onSnapshot(q, (querySnapshot) => {
-                const productsList = querySnapshot.docs.map((item) => ({
+                const orderList = querySnapshot.docs.map((item) => ({
                     id: item.id,
                     ...item.data(),
                 }));
 
-                dispatch(productsActions.productsData(productsList));
+                dispatch(orderHistoryActions.orderHistory(orderList));
+                // console.log(orderList, "order List");
             });
         } catch (error) {
             toast.error(error.message);

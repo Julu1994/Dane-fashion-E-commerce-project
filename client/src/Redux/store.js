@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { userAuth } from "./Features/authSlice";
 import { cart } from "./Features/cartSlice";
 import { cartToggleSlice } from "./Features/cartToggleSlice";
+import { orderHistorySlice } from "./Features/orderHistorySlice";
 import { orderSlice } from "./Features/orderSlice";
 import { shopProducts } from "./Features/productsSlice";
 import { StepSlice } from "./Features/stepSlice";
@@ -16,5 +17,6 @@ export const store = configureStore({
         cartToggle: cartToggleSlice.reducer,
         stepping: StepSlice.reducer,
         orderInfo: orderSlice.reducer,
+        orderHistory: orderHistorySlice.reducer,
     },
 });
