@@ -18,7 +18,7 @@ const Checkout = () => {
     const dispatch = useDispatch();
 
     const totalSteps = () => {
-        return steps.length;
+        return steps.length + 1;
     };
 
     // const isLastStep = () => {
@@ -44,7 +44,9 @@ const Checkout = () => {
                 {iscomplete() ? (
                     <React.Fragment>
                         <Typography sx={{ mt: 2, mb: 1 }}>
-                            All steps completed - you&apos;re finished
+                            Successful order. Soon you will be notified with
+                            delivery update! Thanks for having trust in
+                            Dane.com!
                         </Typography>
                         <Box
                             sx={{
@@ -54,6 +56,13 @@ const Checkout = () => {
                             }}>
                             <Box sx={{ flex: "1 1 auto" }} />
                             <Button>Reset</Button>
+                            <Button
+                                color="inherit"
+                                disabled={activeStepp === 0}
+                                onClick={handleBack}
+                                sx={{ mr: 1 }}>
+                                Back
+                            </Button>
                         </Box>
                     </React.Fragment>
                 ) : (

@@ -79,14 +79,15 @@ const StripeForm = () => {
             console.log(error.message);
         }
     };
-
-    if (loading) {
+    const nextHandler = () => {
         dispatch(stepActions.increaseStep());
+    };
+    if (loading) {
         try {
             addDoc(collection(database, "orders"), {
                 order,
             });
-            toast.success("Successful order");
+            nextHandler();
         } catch (error) {
             toast.error(error);
         }
