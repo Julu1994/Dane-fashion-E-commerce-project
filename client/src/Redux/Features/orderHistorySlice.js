@@ -1,10 +1,31 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    address: "",
-    city: "",
-    postCode: 0,
-    order: {},
+    orders: [
+        {
+            id: "00",
+            order: {
+                email: "test@email..com",
+                city: "city",
+                postCode: "01",
+                address: "denmark",
+                cartItem: [
+                    {
+                        totalQuantity: "0",
+                        totalAmount: "0",
+                        items: [
+                            {
+                                name: "product",
+                                totalItemPrice: "0",
+                                id: "01",
+                                price: "0",
+                            },
+                        ],
+                    },
+                ],
+            },
+        },
+    ],
 };
 
 export const orderHistorySlice = createSlice({
@@ -12,7 +33,7 @@ export const orderHistorySlice = createSlice({
     initialState,
     reducers: {
         orderHistory(state, action) {
-            state.order = action.payload;
+            state.orders = action.payload;
         },
     },
 });

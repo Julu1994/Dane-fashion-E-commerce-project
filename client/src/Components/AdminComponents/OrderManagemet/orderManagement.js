@@ -3,9 +3,9 @@ import "./orderManagement.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { getOrderData } from "../../../Redux/actionCreator2";
 const OrderManagement = () => {
-    const order = useSelector((state) => state.orderHistory.order);
+    const orders = useSelector((state) => state.orderHistory.orders);
     const dispatch = useDispatch();
-    console.log(order, "from order management");
+    console.log(orders, "from order management");
 
     useEffect(() => {
         dispatch(getOrderData());
@@ -14,7 +14,7 @@ const OrderManagement = () => {
     return (
         <div className="orders">
             <h2>Orders</h2>
-            {order.map((item) => {
+            {orders?.map((item) => {
                 return (
                     <div className="orders-item" key={item.id}>
                         <h5>Email: {item.order.email}</h5>
@@ -22,7 +22,7 @@ const OrderManagement = () => {
                         <h5>Post code: {item.order.postCode}</h5>
                         <h5>City: {item.order.city}</h5>
                         <h3>--Products--</h3>
-                        {item.order.cartItem.items.map((i) => {
+                        {item.order.cartItem.items?.map((i) => {
                             return (
                                 <div key={i.id}>
                                     <h5>Product name: {i.name}</h5>
