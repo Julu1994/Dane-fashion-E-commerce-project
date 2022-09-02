@@ -16,6 +16,7 @@ import { useSelector } from "react-redux";
 import Cart from "./Pages/CartPage/cart";
 import Checkout from "./Pages/CheckoutPage/checkout";
 import CardPayment from "./Pages/Payment/cardPayment";
+import UserHistory from "./Pages/UserHistory/userHistory";
 
 function App() {
     const showCart = useSelector((state) => state.cartToggle.cartShow);
@@ -36,6 +37,7 @@ function App() {
                 <Route path="/reset" element={<Reset />} />
                 <Route path="/checkout" element={<Checkout />} />
                 <Route path="/payment" element={<CardPayment />} />
+                <Route path="/user-profile" element={<UserHistory />} />
 
                 <Route
                     path="/admin/*"
