@@ -1,13 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductsData } from "../../Redux/actionCreators";
-import "./popularProducts.scss";
+import "./products.scss";
 import ProductCard from "./productCard/productCard";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-
-import "swiper/css";
-import "swiper/css/free-mode";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 function Products({ catagory }) {
     const dispatch = useDispatch();
@@ -19,38 +17,47 @@ function Products({ catagory }) {
     useEffect(() => {
         dispatch(getProductsData());
     }, [dispatch]);
+    var settings = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        initialSlide: 0,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true,
+                },
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2,
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
+    };
 
     return (
         <div className="popular">
-            <Swiper
-                className="mySwiper"
-                slidesPerView={6}
-                spaceBetween={10}
-                breakpoints={{
-                    360: {
-                        slidesPerView: 2,
-                        spaceBetween: 0,
-                    },
-                    375: {
-                        slidesPerView: 2,
-                        spaceBetween: 0,
-                    },
-                    736: {
-                        slidesPerView: 3,
-                        spaceBetween: 10,
-                    },
-                    1264: {
-                        slidesPerView: 4,
-                        spaceBetween: 15,
-                    },
-                    1524: {
-                        slidesPerView: 5,
-                        spaceBetween: 15,
-                    },
-                }}>
+            <Slider {...settings}>
                 {popularProducts.map((item) => {
                     return (
-                        <SwiperSlide className="swiper-box" key={item.id}>
+                        <div key={item.id} className="product-card">
                             <ProductCard
                                 productObj={item}
                                 productName={item.name}
@@ -58,10 +65,10 @@ function Products({ catagory }) {
                                 price={item.price}
                                 id={item.id}
                             />
-                        </SwiperSlide>
+                        </div>
                     );
                 })}
-            </Swiper>
+            </Slider>
         </div>
     );
 }

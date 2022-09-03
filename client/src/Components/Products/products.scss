@@ -1,16 +1,29 @@
-.popular {
-    width: 75%;
-    margin: 1rem auto;
+.product-card {
+    width: 220px;
+    height: 300px;
+
 }
 
-.swiper-box {
-    padding: 1rem;
+.slick-slide>div {
+    margin: 0 2.4rem;
+
 }
+
+.popular {
+    width: 90%;
+    margin: 0 auto;
+}
+
 
 @media only screen and (max-width: 760px) {
     .popular {
         width: 90%;
         margin: 2rem auto;
+    }
+
+    .slick-slide>div {
+        margin: 0 .9rem;
+
     }
 }
 
@@ -19,11 +32,21 @@
         width: 98%;
         margin: 2rem auto;
     }
+
+    .slick-slide>div {
+        margin: 0 .6rem;
+
+    }
 }
 
 @media only screen and (max-width: 360px) {
     .popular {
         width: 100%;
         margin: 2.5rem auto;
+    }
+
+    .slick-slide>div {
+        margin: 0 .6rem;
+
     }
 }

@@ -44,6 +44,9 @@ const Order = () => {
                     </div>
                 );
             })}
+            {userOrder.length === 0 && (
+                <h3 className="order-empty">No orders to display!! </h3>
+            )}
         </div>
     );
 };

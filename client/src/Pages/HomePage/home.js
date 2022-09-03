@@ -14,7 +14,7 @@ const Home = () => {
                 header={"Popular Now"}
                 title={"They're taking the world by storm!"}
             />
-            <Products catagory={"regular"} />
+            <Products catagory={"popular"} />
             <SectionHeader
                 header={"Trending Now"}
                 title={"Discover all the trendy styles"}
@@ -24,7 +24,7 @@ const Home = () => {
                 header={"New Arrivals"}
                 title={"Find your look with soft athleisure!"}
             />
-            <Products catagory={"popular"} />
+            <Products catagory={"new arrivals"} />
             <SectionHeader header={"Why Dane.com?"} />
             <Statics />
         </div>

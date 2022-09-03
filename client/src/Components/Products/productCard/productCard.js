@@ -31,12 +31,14 @@ const ProductCard = (props) => {
             }}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}>
-            <Link to={`/product/${id}`} style={{ textDecoration: "none" }}>
-                <Card
-                    sx={{
-                        maxWidth: 240,
-                        borderRadius: " 1.5rem",
-                    }}>
+            <Card
+                sx={{
+                    maxWidth: 230,
+                    borderRadius: " 1.5rem",
+                }}>
+                <Link
+                    to={`/product/${id}`}
+                    style={{ textDecoration: "none", color: "black" }}>
                     <CardMedia
                         component="img"
                         height="180"
@@ -61,8 +63,8 @@ const ProductCard = (props) => {
                         </Button>
                         <Rating />
                     </CardActions>
-                </Card>
-            </Link>
+                </Link>
+            </Card>
         </div>
     );
 };
