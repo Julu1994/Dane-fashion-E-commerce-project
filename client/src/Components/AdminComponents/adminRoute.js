@@ -8,9 +8,11 @@ const AdminRoute = ({ children }) => {
         return children;
     }
     return (
-        <Link className="header-nav-link" to="/lifestyle">
-            Suppport
-        </Link>
+        <div>
+            <Link className="header-nav-link" to="/lifestyle">
+                Suppport
+            </Link>
+        </div>
     );
 };
 

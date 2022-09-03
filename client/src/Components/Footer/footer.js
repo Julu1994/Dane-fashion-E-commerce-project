@@ -31,7 +31,7 @@ const Footer = () => {
         }
     }, [deviceWidth]);
     return (
-        <div className="footer">
+        <div className="footer" style={{ display: "block" }}>
             <div className="footer-main">
                 <FooterLinks click={linkDropdown} showlink={showLink} />
                 <Catagory

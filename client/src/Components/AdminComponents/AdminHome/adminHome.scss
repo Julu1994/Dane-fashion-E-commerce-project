@@ -2,7 +2,6 @@
 @import "../../Sass/variables.scss";
 
 .adminHome {
-    @include adminPageLayout;
     margin-top: 3rem;
 
     &-earning {

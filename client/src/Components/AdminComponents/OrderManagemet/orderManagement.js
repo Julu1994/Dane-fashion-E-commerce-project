@@ -2,12 +2,8 @@ import React, { useEffect } from "react";
 import "./orderManagement.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { getOrderData } from "../../../Redux/actionCreator2";
-const OrderManagement = ({ userEmail }) => {
+const OrderManagement = () => {
     const orders = useSelector((state) => state.orderHistory.orders);
-    const userOrder = orders.filter(
-        (item) => item.order.postCode === userEmail
-    );
-    console.log(userOrder, "userOrder");
     const dispatch = useDispatch();
     console.log(orders, "from order management");
 
@@ -17,7 +13,7 @@ const OrderManagement = ({ userEmail }) => {
 
     return (
         <div className="orders">
-            <h2>Orders</h2>
+            <h2 className="orders-header">Orders</h2>
             {orders?.map((item) => {
                 return (
                     <div className="orders-item" key={item.id}>

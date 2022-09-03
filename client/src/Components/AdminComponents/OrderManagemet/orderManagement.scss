@@ -2,10 +2,18 @@
 @import "../../Sass/variables.scss";
 
 .orders {
-    @include adminPageLayout;
-    margin-top: 3rem;
+    width: 70%;
+    height: 100%;
+    margin: 1rem auto;
+
+    &-header {
+        width: 15%;
+        margin: 0 auto;
+    }
 
     &-item {
+        width: 100%;
+        height: 20rem;
         background-color: rgb(237, 237, 237);
         margin-top: .5rem;
         padding: 2rem;

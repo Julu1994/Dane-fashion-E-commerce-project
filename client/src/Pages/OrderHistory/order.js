@@ -1,9 +1,9 @@
+import "./order.scss";
 import React, { useEffect } from "react";
-import "./userHistory.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { getOrderData } from "../../Redux/actionCreator2";
 
-const OrderManagement = () => {
+const Order = () => {
     const orders = useSelector((state) => state.orderHistory.orders);
     const userEmail = useSelector((state) => state.user.userInfo.email);
     const userOrder = orders.filter((item) => item.order.email === userEmail);
@@ -15,11 +15,11 @@ const OrderManagement = () => {
     }, [dispatch]);
 
     return (
-        <div className="orders">
-            <h2>Orders</h2>
+        <div className="order">
+            <h2 className="order-header">Order History</h2>
             {userOrder?.map((item) => {
                 return (
-                    <div className="orders-item" key={item.id}>
+                    <div className="order-item" key={item.id}>
                         <h5>Email: {item.order.email}</h5>
                         <h5>Address: {item.order.address}</h5>
                         <h5>Post code: {item.order.postCode}</h5>
@@ -48,4 +48,4 @@ const OrderManagement = () => {
     );
 };
 
-export default OrderManagement;
+export default Order;

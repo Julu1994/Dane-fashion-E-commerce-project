@@ -35,7 +35,7 @@ const Loginnav = () => {
                         onClick={loggingOut}>
                         <h3 className="loginnav-text">Logout</h3>
                     </Link>
-                    <Link to="/user-profile" className="loginnav-register">
+                    <Link to="/order" className="loginnav-register">
                         <h3 className="loginnav-text">Order History</h3>
                     </Link>
                 </div>
