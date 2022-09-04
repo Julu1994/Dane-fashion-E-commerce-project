@@ -1,6 +1,9 @@
+import "./singleProduct.scss";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import Products from "../../Components/Products/products";
+import SectionHeader from "../../Components/SectionHeader/sectionHeader";
 import Sproduct from "../../Components/SingleProductComponnet/sProduct";
 import { getProductsData } from "../../Redux/actionCreators";
 
@@ -27,6 +30,13 @@ const SingleProduct = () => {
                     />
                 );
             })}
+            <div className="related-item">
+                <SectionHeader
+                    header={"You may also like these"}
+                    title={"Find your look with soft athleisure!"}
+                />
+                <Products catagory={"popular"} />
+            </div>
         </div>
     );
 };

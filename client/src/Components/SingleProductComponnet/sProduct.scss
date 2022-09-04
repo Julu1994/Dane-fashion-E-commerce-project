@@ -53,3 +53,23 @@
         margin-top: 0;
     }
 }
+
+@media only all and (max-width: 676px) {
+    .single-p {
+        height: 100%;
+        width: 90%;
+        margin: 5rem auto;
+        position: unset;
+    }
+
+    .single-p-left {
+        width: 100%;
+        position: unset;
+    }
+
+    .single-p-right {
+        width: 90%;
+        position: unset;
+        text-align: center;
+    }
+}
