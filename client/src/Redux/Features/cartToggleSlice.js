@@ -9,7 +9,10 @@ export const cartToggleSlice = createSlice({
     initialState,
     reducers: {
         showingCart(state) {
-            state.cartShow = !state.cartShow;
+            state.cartShow = true;
+        },
+        hidingCart(state) {
+            state.cartShow = false;
         },
     },
 });

@@ -5,6 +5,7 @@ import CartItem from "../../Components/Cart/cartItem";
 import Button from "@mui/material/Button";
 import { cartActions } from "../../Redux/Features/cartSlice";
 import { Link } from "react-router-dom";
+import { cartToggleActions } from "../../Redux/Features/cartToggleSlice";
 
 const Cart = () => {
     const cartProduct = useSelector((state) => state.cartItem);
@@ -14,8 +15,17 @@ const Cart = () => {
     const cartEmpty = () => {
         dispatch(cartActions.emptyTheCart());
     };
+    const showingCart = () => {
+        dispatch(cartToggleActions.showingCart());
+    };
+    const HidingCart = () => {
+        dispatch(cartToggleActions.hidingCart());
+    };
     return (
-        <div className="cart">
+        <div
+            className="cart"
+            onMouseEnter={showingCart}
+            onMouseLeave={HidingCart}>
             {cartProduct.items?.map((i) => {
                 return (
                     <CartItem

@@ -16,8 +16,11 @@ export const HeaderContent = () => {
     const toggleDispatch = () => {
         dispatcher(toggleActions.profileToggle());
     };
-    const showingHidingCart = () => {
+    const showingCart = () => {
         dispatch(cartToggleActions.showingCart());
+    };
+    const HidingCart = () => {
+        dispatch(cartToggleActions.hidingCart());
     };
     return (
         <div className="content">
@@ -44,9 +47,17 @@ export const HeaderContent = () => {
             <li className="content-cart">
                 <IoBagHandleOutline
                     className="content-cursor"
-                    onClick={showingHidingCart}
+                    onMouseEnter={showingCart}
+                    onMouseLeave={HidingCart}
                 />
-                <p className="content-badge">{cartQuantity}</p>
+                {cartQuantity > 0 && (
+                    <p
+                        onMouseEnter={showingCart}
+                        onMouseLeave={HidingCart}
+                        className="content-badge">
+                        {cartQuantity}
+                    </p>
+                )}
             </li>
         </div>
     );
