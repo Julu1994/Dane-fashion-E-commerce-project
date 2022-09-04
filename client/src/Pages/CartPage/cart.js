@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
     const cartProduct = useSelector((state) => state.cartItem);
+    const userDetails = useSelector((state) => state.user.userInfo.id);
     const dispatch = useDispatch();
 
     const cartEmpty = () => {
@@ -30,19 +31,35 @@ const Cart = () => {
             {cartProduct.items.length > 0 ? (
                 <>
                     <h3>Total</h3>
-                    <Link to="/checkout" style={{ textDecoration: "none" }}>
-                        <Button
-                            className="cart-checkout"
-                            variant="contained"
-                            color="error"
-                            sx={{
-                                minWidth: "90%",
-                                marginLeft: "5%",
-                                marginBottom: "1rem",
-                            }}>
-                            Go to checkout
-                        </Button>
-                    </Link>
+                    {userDetails ? (
+                        <Link to="/checkout" style={{ textDecoration: "none" }}>
+                            <Button
+                                className="cart-checkout"
+                                variant="contained"
+                                color="error"
+                                sx={{
+                                    minWidth: "90%",
+                                    marginLeft: "5%",
+                                    marginBottom: "1rem",
+                                }}>
+                                Go to checkout
+                            </Button>
+                        </Link>
+                    ) : (
+                        <Link to="/login" style={{ textDecoration: "none" }}>
+                            <Button
+                                className="cart-checkout"
+                                variant="contained"
+                                color="error"
+                                sx={{
+                                    minWidth: "90%",
+                                    marginLeft: "5%",
+                                    marginBottom: "1rem",
+                                }}>
+                                Go to checkout
+                            </Button>
+                        </Link>
+                    )}
                     <Button
                         onClick={cartEmpty}
                         className="cart-checkout"
