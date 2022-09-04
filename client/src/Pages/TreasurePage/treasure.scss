@@ -1,0 +1,76 @@
+.treasure {
+    width: 95%;
+    margin: 0 auto;
+
+    &-header {
+        position: relative;
+        width: 40%;
+        height: 2rem;
+        border-radius: 1.2rem;
+        border: 1px solid red;
+        margin: 2rem auto;
+    }
+
+    &-all {
+        border-top-left-radius: 1.2rem;
+        border-bottom-left-radius: 1.2rem;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        width: 25%;
+        left: 0;
+        height: 100%;
+        padding-top: .1rem;
+        border-right: 1px solid red;
+        cursor: pointer;
+
+    }
+
+    &-acc {
+        position: absolute;
+        width: 25%;
+        top: 0;
+        left: 25%;
+        height: 100%;
+        text-align: center;
+        padding-top: .1rem;
+        border-right: 1px solid red;
+        cursor: pointer;
+
+    }
+
+    &-clt {
+        position: absolute;
+        width: 25%;
+        top: 0;
+        left: 50%;
+        height: 100%;
+        text-align: center;
+        padding-top: .1rem;
+        border-right: 1px solid red;
+        cursor: pointer;
+
+    }
+
+    &-jw {
+        position: absolute;
+        top: 0;
+        width: 25%;
+        left: 75%;
+        height: 100%;
+        border-top-right-radius: 1.2rem;
+        border-bottom-right-radius: 1.2rem;
+        text-align: center;
+        padding-top: .1rem;
+        cursor: pointer;
+
+
+    }
+
+
+}
+
+.bg {
+    background-color: rgb(247, 6, 66);
+    color: white;
+}

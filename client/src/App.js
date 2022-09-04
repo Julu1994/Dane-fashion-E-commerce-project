@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./Pages/HomePage/home";
 import Shop from "./Pages/ShopPage/shop";
 import Support from "./Pages/SupportPage/support";
-import Lifestyle from "./Pages/LifestylePage/lifestyle";
 import Header from "./Components/Header/header";
 import Footer from "./Components/Footer/footer";
 import Login from "./Pages/LoginPage/login";
@@ -17,6 +16,7 @@ import Cart from "./Pages/CartPage/cart";
 import Checkout from "./Pages/CheckoutPage/checkout";
 import CardPayment from "./Pages/Payment/cardPayment";
 import Order from "./Pages/OrderHistory/order";
+import Treasure from "./Pages/TreasurePage/treasure";
 
 function App() {
     const showCart = useSelector((state) => state.cartToggle.cartShow);
@@ -30,7 +30,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/product/:id" element={<SingleProduct />} />
                 <Route path="/shop" element={<Shop />} />
-                <Route path="/lifestyle" element={<Lifestyle />} />
+                <Route path="/treasure" element={<Treasure />} />
                 <Route path="/support" element={<Support />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
