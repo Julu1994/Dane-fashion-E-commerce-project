@@ -1,7 +1,6 @@
 import "./headerContent.scss";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { BiSearch } from "react-icons/bi";
 import { AiOutlineUser } from "react-icons/ai";
 import { IoBagHandleOutline } from "react-icons/io5";
 import Avater from "./avater";
