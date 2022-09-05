@@ -35,7 +35,9 @@ app.post("/stripe-payment", cors(), async (req, res) => {
         });
     }
 });
-
+app.get("/", (req, res) => {
+    res.send("Server is running");
+});
 app.listen(process.env.PORT || 4000, () => {
     console.log("Sever is up and running on port 4000");
 });
