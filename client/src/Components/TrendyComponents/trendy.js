@@ -17,7 +17,7 @@ const Trendy = () => {
                         </p>
                     </div>
 
-                    <Link className="trendy-link" to="/lifestyle">
+                    <Link className="trendy-link" to="/shop">
                         <button className="trendy-link-btn">See more</button>
                     </Link>
                 </div>
@@ -31,7 +31,7 @@ const Trendy = () => {
                         </p>
                     </div>
 
-                    <Link className="trendy-link" to="/lifestyle">
+                    <Link className="trendy-link" to="/treasure">
                         <button className="trendy-link-btn">See more</button>
                     </Link>
                 </div>

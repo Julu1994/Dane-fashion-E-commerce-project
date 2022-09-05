@@ -9,7 +9,7 @@ const AdminRoute = ({ children }) => {
     }
     return (
         <div>
-            <Link className="header-nav-link" to="/lifestyle">
+            <Link className="header-nav-link" to="/support">
                 Suppport
             </Link>
         </div>
