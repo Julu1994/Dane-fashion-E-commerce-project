@@ -10,6 +10,7 @@ import ConfirmOrder from "../../Components/CheckoutComponents/confirmOrder";
 import { useDispatch, useSelector } from "react-redux";
 import { stepActions } from "../../Redux/Features/stepSlice";
 import CardPayment from "../../Components/CheckoutComponents/cardPayment";
+import { VscPass } from "react-icons/vsc";
 
 const steps = ["Delivery Info", "Confirm the order", "Payment"];
 
@@ -18,12 +19,9 @@ const Checkout = () => {
     const dispatch = useDispatch();
 
     const totalSteps = () => {
-        return steps.length + 1;
+        return steps.length;
     };
 
-    // const isLastStep = () => {
-    //     return activeStepp === totalSteps() - 1;
-    // };
     const iscomplete = () => {
         return activeStepp === totalSteps();
     };
@@ -32,7 +30,7 @@ const Checkout = () => {
     };
 
     return (
-        <Box sx={{ width: "100%" }}>
+        <Box sx={{ width: "100%", mt: 5 }}>
             <Stepper activeStep={activeStepp} alternativeLabel>
                 {steps.map((label) => (
                     <Step key={label}>
@@ -43,7 +41,17 @@ const Checkout = () => {
             <div>
                 {iscomplete() ? (
                     <React.Fragment>
-                        <Typography sx={{ mt: 2, mb: 1 }}>
+                        <Typography
+                            sx={{
+                                mt: 20,
+                                mb: 20,
+                                textAlign: "center",
+                                fontSize: "1.5rem",
+                            }}>
+                            <div
+                                style={{ textAlign: "center", color: "green" }}>
+                                <VscPass size={50} />
+                            </div>
                             Successful order. Soon you will be notified with
                             delivery update! Thanks for having trust in
                             Dane.com!
@@ -55,14 +63,6 @@ const Checkout = () => {
                                 pt: 2,
                             }}>
                             <Box sx={{ flex: "1 1 auto" }} />
-                            <Button>Reset</Button>
-                            <Button
-                                color="inherit"
-                                disabled={activeStepp === 0}
-                                onClick={handleBack}
-                                sx={{ mr: 1 }}>
-                                Back
-                            </Button>
                         </Box>
                     </React.Fragment>
                 ) : (
@@ -84,7 +84,6 @@ const Checkout = () => {
                                 Back
                             </Button>
                             <Box sx={{ flex: "1 1 auto" }} />
-                            <Button>next</Button>
                         </Box>
                     </React.Fragment>
                 )}

@@ -39,6 +39,10 @@ const StripeForm = () => {
     const customerEmail = useSelector((state) => state.user.userInfo.email);
     const order = useSelector((state) => state.orderInfo.order);
 
+    const nextHandler = () => {
+        dispatch(stepActions.increaseStep());
+    };
+
     const submitHandler = async (e) => {
         e.preventDefault();
         setProcessing(true);
@@ -64,6 +68,14 @@ const StripeForm = () => {
                     setLoading(true);
                     setProcessing(false);
                     toast.success("Successful payment");
+                    try {
+                        addDoc(collection(database, "orders"), {
+                            order,
+                        });
+                        nextHandler();
+                    } catch (error) {
+                        toast.error(error);
+                    }
                 } else {
                     toast.error("Something went wrong, Please try again");
                     setProcessing(false);
@@ -79,19 +91,7 @@ const StripeForm = () => {
             console.log(error.message);
         }
     };
-    const nextHandler = () => {
-        dispatch(stepActions.increaseStep());
-    };
-    if (loading) {
-        try {
-            addDoc(collection(database, "orders"), {
-                order,
-            });
-            nextHandler();
-        } catch (error) {
-            toast.error(error);
-        }
-    }
+
     return (
         <div className="form">
             {!loading ? (

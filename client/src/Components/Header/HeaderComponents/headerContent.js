@@ -24,9 +24,6 @@ export const HeaderContent = () => {
     };
     return (
         <div className="content">
-            <li className="content-search">
-                <BiSearch className="content-cursor" />
-            </li>
             <li className="content-login">
                 {userDetails.id ? (
                     <Avater
@@ -46,6 +43,7 @@ export const HeaderContent = () => {
             </li>
             <li className="content-cart">
                 <IoBagHandleOutline
+                    size={30}
                     className="content-cursor"
                     onMouseEnter={showingCart}
                     onMouseLeave={HidingCart}

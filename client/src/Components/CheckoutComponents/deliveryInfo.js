@@ -1,3 +1,4 @@
+import { Box, Button } from "@mui/material";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { orderActions } from "../../Redux/Features/orderSlice";
@@ -46,7 +47,9 @@ const DeliveryInfo = () => {
                     type={"text"}
                     onchange={postcodeHandler}
                 />
-                <button type="submit">Next</button>
+                <Box sx={{ textAlign: "center" }}>
+                    <Button type="submit">Next</Button>
+                </Box>
             </form>
         </div>
     );
