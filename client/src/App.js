@@ -38,6 +38,7 @@ function App() {
                 <Route path="/checkout" element={<Checkout />} />
                 <Route path="/payment" element={<CardPayment />} />
                 <Route path="/order" element={<Order />} />
+                <Route path="/test" element={<Login />} />
 
                 <Route
                     path="/admin/*"
