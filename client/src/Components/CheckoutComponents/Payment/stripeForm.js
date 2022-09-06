@@ -55,7 +55,7 @@ const StripeForm = () => {
             try {
                 const { id } = paymentMethod;
                 const response = await axios.post(
-                    "http://localhost:4000/stripe-payment",
+                    "https://dane-dotcom-server.herokuapp.com/stripe-payment",
                     {
                         amount: price,
                         id,
