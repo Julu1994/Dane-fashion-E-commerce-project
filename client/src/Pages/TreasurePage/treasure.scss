@@ -1,6 +1,6 @@
 .treasure {
-    width: 95%;
-    margin: 0 auto;
+    width: 80%;
+    margin: 3rem auto;
 
     &-header {
         position: relative;
@@ -8,7 +8,7 @@
         height: 2rem;
         border-radius: 1.2rem;
         border: 1px solid red;
-        margin: 2rem auto;
+        margin: 2rem auto 6rem auto;
     }
 
     &-all {
@@ -76,9 +76,35 @@
     color: white;
 }
 
-@media only screen and (max-width: 486px) {
+@media (max-width: 1200px) {
     .treasure {
-        width: 100%;
+        width: 80%;
+
+    }
+
+    .treasure-header {
+        padding-top: 0;
+        width: 85%;
+        font-size: .8rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .treasure {
+        width: 90%;
+
+    }
+
+    .treasure-header {
+        padding-top: 0;
+        width: 85%;
+        font-size: .8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .treasure {
+        width: 98%;
 
     }
 

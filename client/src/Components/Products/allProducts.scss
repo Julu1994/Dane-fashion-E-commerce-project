@@ -2,12 +2,64 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    column-gap: .8rem;
+    column-gap: 2rem;
+    row-gap: 5rem;
 }
 
-@media only screen and (max-width: 680px) {
+.product-main {
+    min-width: 16rem;
+    height: 90%;
+
+}
+
+
+@media (max-width: 1200px) {
+    .products {
+        column-gap: 1rem;
+        row-gap: 5rem;
+    }
+
     .product-main {
-        max-width: 160px;
+        min-width: 14rem;
+
+    }
+}
+
+@media (max-width: 900px) {
+    .products {
+        column-gap: 2rem;
+        row-gap: 5rem;
+    }
+
+    .product-main {
+
+        min-width: 14rem;
+
+    }
+}
+
+@media (max-width: 600px) {
+    .products {
+        column-gap: 0;
+        row-gap: 2.5rem;
+    }
+
+    .product-main {
+        min-width: 11rem;
+
+
+    }
+}
+
+@media (max-width: 360px) {
+    .products {
+        column-gap: 0;
+        row-gap: .5rem;
+    }
+
+    .product-main {
+        min-width: 16rem;
+
 
     }
 }
