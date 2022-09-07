@@ -27,6 +27,7 @@ const ProductCard = (props) => {
                     height: "100%",
                     ml: "auto",
                     mr: "auto",
+                    mb: "3rem",
                 }}>
                 <Link
                     to={`/product/${id}`}
