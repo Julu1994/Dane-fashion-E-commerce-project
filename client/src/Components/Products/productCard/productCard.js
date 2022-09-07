@@ -11,15 +11,7 @@ import Rating from "../rating";
 import { Link } from "react-router-dom";
 
 const ProductCard = (props) => {
-    const [isHovering, setIsHovering] = useState(false);
     const { productName, productImg, price, id } = props;
-    const handleMouseEnter = () => {
-        setIsHovering(true);
-    };
-
-    const handleMouseLeave = () => {
-        setIsHovering(false);
-    };
 
     return (
         <div
@@ -28,9 +20,7 @@ const ProductCard = (props) => {
                 height: "100%",
                 margin: "0",
                 padding: ".2rem",
-            }}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}>
+            }}>
             <Card
                 sx={{
                     maxWidth: "18rem",
