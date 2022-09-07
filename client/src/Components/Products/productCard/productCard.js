@@ -25,40 +25,54 @@ const ProductCard = (props) => {
         <div
             className="card"
             style={{
-                margin: isHovering ? "-.1rem" : "0",
-                padding: isHovering ? ".2rem" : ".5rem",
-                transition: ".5s",
+                height: "100%",
+                margin: "0",
+                padding: ".2rem",
             }}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}>
             <Card
                 sx={{
-                    maxWidth: 230,
+                    maxWidth: "18rem",
                     borderRadius: " 1.5rem",
+                    height: "100%",
+                    ml: "auto",
+                    mr: "auto",
                 }}>
                 <Link
                     to={`/product/${id}`}
                     style={{ textDecoration: "none", color: "black" }}>
                     <CardMedia
                         component="img"
-                        height="180"
+                        height="220"
                         image={productImg}
                         alt="green iguana"
                     />
                     <CardContent sx={{ maxHeight: ".5rem" }}>
                         <Typography
-                            sx={{ maxHeight: ".2rem", fontSize: ".9rem" }}
+                            sx={{
+                                maxHeight: ".2rem",
+                                fontSize: ".8rem",
+                                ml: "-.5rem",
+                            }}
                             variant="p">
                             {productName}
                         </Typography>
                     </CardContent>
 
-                    <CardActions>
+                    <CardActions
+                        sx={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                        }}>
                         <Button
                             variant="outlined"
                             color="error"
                             size="small"
-                            sx={{ marginBottom: ".5rem", padding: "0" }}>
+                            sx={{
+                                marginBottom: ".5rem",
+                                padding: "0",
+                            }}>
                             {price}$
                         </Button>
                         <Rating />

@@ -7,7 +7,7 @@ function AllProducts({ products }) {
         <div className="products">
             {products.map((item) => {
                 return (
-                    <div key={item.id} className="product-card">
+                    <div key={item.id} className="product-main">
                         <ProductCard
                             productObj={item}
                             productName={item.name}
