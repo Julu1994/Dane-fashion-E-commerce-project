@@ -18,11 +18,11 @@ export default function CartButton({ itemID }) {
     };
     return (
         <Box sx={{ "& > :not(style)": { marginBottom: 1 } }}>
-            <Fab size="small" aria-label="add">
-                <GrAdd onClick={increaseItem} />
+            <Fab size="small" aria-label="add" onClick={increaseItem}>
+                <GrAdd />
             </Fab>
-            <Fab size="small" aria-label="add">
-                <AiOutlineMinus onClick={decreaseItem} />
+            <Fab size="small" aria-label="add" onClick={decreaseItem}>
+                <AiOutlineMinus />
             </Fab>
         </Box>
     );
