@@ -41,7 +41,7 @@ const Cart = () => {
             {cartProduct.items.length > 0 ? (
                 <>
                     <h3 className="cart-total">
-                        Total: {cartProduct.totalAmount}
+                        Total: {cartProduct.totalAmount}.00$
                     </h3>
                     {userDetails ? (
                         <Link to="/checkout" style={{ textDecoration: "none" }}>

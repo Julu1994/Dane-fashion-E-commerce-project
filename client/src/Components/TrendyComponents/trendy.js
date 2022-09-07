@@ -6,7 +6,7 @@ import "./trendy.scss";
 const Trendy = () => {
     return (
         <div className="trendy">
-            <Link to="/lifestyle">
+            <Link to="/shop">
                 <div className="trendy-left">
                     <div className="trendy-left-main">
                         <h2 className="trendy-left-main-header">
@@ -22,7 +22,7 @@ const Trendy = () => {
                     </Link>
                 </div>
             </Link>
-            <Link to="/lifestyle">
+            <Link to="/shop">
                 <div className="trendy-right">
                     <div className="trendy-right-main">
                         <h2 className="trendy-right-main-header">Sportswear</h2>
