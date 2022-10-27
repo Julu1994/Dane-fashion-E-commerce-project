@@ -1,9 +1,9 @@
 import React from "react";
-import Banner from "../../Components/Banner/banner";
+import Banner from "../../Components/Home/Banner/banner";
 import Products from "../../Components/Products/products";
-import SectionHeader from "../../Components/SectionHeader/sectionHeader";
 import Statics from "../../Components/Statics/statics";
 import Trendy from "../../Components/TrendyComponents/trendy";
+import SectionHeader from "../../GlobalComponents/SectionHeader/sectionHeader";
 import "./home.scss";
 
 const Home = () => {

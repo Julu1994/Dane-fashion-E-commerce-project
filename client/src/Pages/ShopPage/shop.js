@@ -1,6 +1,6 @@
 import React from "react";
 import Products from "../../Components/Products/products";
-import SectionHeader from "../../Components/SectionHeader/sectionHeader";
+import SectionHeader from "../../GlobalComponents/SectionHeader/sectionHeader";
 import "./shop.scss";
 
 const Shop = () => {

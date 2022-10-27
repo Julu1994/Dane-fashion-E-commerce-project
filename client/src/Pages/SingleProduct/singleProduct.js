@@ -3,9 +3,9 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Products from "../../Components/Products/products";
-import SectionHeader from "../../Components/SectionHeader/sectionHeader";
 import Sproduct from "../../Components/SingleProductComponnet/sProduct";
 import { getProductsData } from "../../Redux/actionCreators";
+import SectionHeader from "../../GlobalComponents/SectionHeader/sectionHeader";
 
 const SingleProduct = () => {
     const { id } = useParams();
