@@ -1,7 +1,7 @@
 import "./treasure.scss";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import AllProducts from "../../Components/Products/allProducts";
+import AllProducts from "../../GlobalComponents/Products/allProducts";
 import { getProductsData } from "../../Redux/actionCreators";
 
 const Treasure = () => {

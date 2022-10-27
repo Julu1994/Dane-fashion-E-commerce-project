@@ -1,6 +1,6 @@
 import "./sProduct.scss";
 import React from "react";
-import ProductRating from "../Products/rating";
+import ProductRating from "../../GlobalComponents/Products/rating";
 import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../Redux/Features/cartSlice";

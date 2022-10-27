@@ -1,5 +1,5 @@
-@import "../Sass/mixins.scss";
-@import "../Sass//variables.scss";
+@import "../../Sass/variables.scss";
+@import "../../Sass/mixins.scss";
 
 .trendy {
     position: relative;
@@ -11,7 +11,7 @@
         width: 49.9%;
         height: 100%;
 
-        background-image: url(../../Resources/trendy2.webp);
+        background-image: url(../../../Resources/trendy2.webp);
         background-repeat: no-repeat;
         background-position: 50% 0;
         background-size: cover;
@@ -21,7 +21,7 @@
         left: 0;
 
         &:hover {
-            background-image: linear-gradient(to right bottom, #35323275, #eaf6f554), url(../../Resources/trendy2.webp);
+            background-image: linear-gradient(to right bottom, #35323275, #eaf6f554), url(../../../Resources/trendy2.webp);
         }
 
         &-main {
@@ -54,7 +54,7 @@
         height: 100%;
         width: 49.9%;
 
-        background-image: url(../../Resources/trendyImG.webp);
+        background-image: url(../../../Resources/trendyImG.webp);
         background-repeat: no-repeat;
         background-position: 50% 0;
         background-size: cover;
@@ -66,7 +66,7 @@
 
 
         &:hover {
-            background-image: linear-gradient(to right bottom, #35323275, #eaf6f554), url(../../Resources/trendyImG.webp);
+            background-image: linear-gradient(to right bottom, #35323275, #eaf6f554), url(../../../Resources/trendyImG.webp);
         }
 
         &-main {

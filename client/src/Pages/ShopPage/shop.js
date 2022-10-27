@@ -1,5 +1,5 @@
 import React from "react";
-import Products from "../../Components/Products/products";
+import Products from "../../GlobalComponents/Products/products";
 import SectionHeader from "../../GlobalComponents/SectionHeader/sectionHeader";
 import "./shop.scss";
 

@@ -1,8 +1,8 @@
 import React from "react";
 import Banner from "../../Components/Home/Banner/banner";
-import Products from "../../Components/Products/products";
-import Statics from "../../Components/Statics/statics";
-import Trendy from "../../Components/TrendyComponents/trendy";
+import Statics from "../../Components/Home/Statics/statics";
+import Trendy from "../../Components/Home/Trendy/trendy";
+import Products from "../../GlobalComponents/Products/products";
 import SectionHeader from "../../GlobalComponents/SectionHeader/sectionHeader";
 import "./home.scss";
 
