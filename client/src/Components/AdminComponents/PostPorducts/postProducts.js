@@ -1,8 +1,8 @@
 import "./postProducts.scss";
 import React, { useState } from "react";
-import Input from "../../GlobalComponents/input";
-import Select from "../../GlobalComponents/select";
-import Button from "../../GlobalComponents/button";
+import Input from "../../../GlobalComponents/Common/input";
+import Select from "../../../GlobalComponents/Common/select";
+import Button from "../../../GlobalComponents/Common/button";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { database, storage } from "../../../Firebase/config";
 import { toast } from "react-toastify";

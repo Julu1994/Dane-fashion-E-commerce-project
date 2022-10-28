@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./Pages/HomePage/home";
 import Shop from "./Pages/ShopPage/shop";
 import Support from "./Pages/SupportPage/support";
-import Header from "./Components/Header/header";
-import Footer from "./Components/Footer/footer";
+import Footer from "./GlobalComponents/Footer/footer";
 import Login from "./Pages/LoginPage/login";
 import Register from "./Pages/RegisterPage/register";
 import { Reset } from "./Pages/PasswordReset/reset";
@@ -17,6 +16,7 @@ import Checkout from "./Pages/CheckoutPage/checkout";
 import CardPayment from "./Pages/Payment/cardPayment";
 import Order from "./Pages/OrderHistory/order";
 import Treasure from "./Pages/TreasurePage/treasure";
+import Header from "./GlobalComponents/Header/header";
 
 function App() {
     const showCart = useSelector((state) => state.cartToggle.cartShow);

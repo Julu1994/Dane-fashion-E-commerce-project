@@ -3,7 +3,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { orderActions } from "../../Redux/Features/orderSlice";
 import { stepActions } from "../../Redux/Features/stepSlice";
-import Input from "../GlobalComponents/input";
+import Input from "../../GlobalComponents/Common/input";
 
 const DeliveryInfo = () => {
     const [address, setAddress] = React.useState("");

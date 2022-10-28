@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./register.scss";
-import Input from "../../Components/GlobalComponents/input";
-import Button from "../../Components/GlobalComponents/button";
+import Input from "../../GlobalComponents/Common/input";
+import Button from "../../GlobalComponents/Common/button";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { createUserWithEmailAndPassword } from "firebase/auth";

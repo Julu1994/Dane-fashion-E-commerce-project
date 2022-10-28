@@ -1,7 +1,7 @@
 import "./reset.scss";
 import React, { useState } from "react";
-import Input from "../../Components/GlobalComponents/input";
-import Button from "../../Components/GlobalComponents/button";
+import Input from "../../GlobalComponents/Common/input";
+import Button from "../../GlobalComponents/Common/button";
 import { auth } from "../../Firebase/config";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";

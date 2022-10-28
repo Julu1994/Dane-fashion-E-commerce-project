@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./login.scss";
-import Input from "../../Components/GlobalComponents/input";
-import { GoogleButton } from "../../Components/GlobalComponents/button";
-import Button from "../../Components/GlobalComponents/button";
+import Input from "../../GlobalComponents/Common/input";
+import { GoogleButton } from "../../GlobalComponents/Common/button";
+import Button from "../../GlobalComponents/Common/button";
 import {
     GoogleAuthProvider,
     signInWithEmailAndPassword,
