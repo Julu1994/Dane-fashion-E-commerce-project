@@ -9,7 +9,7 @@ import { auth } from "../../Firebase/config";
 import { useDispatch, useSelector } from "react-redux";
 import { authAction } from "../../Redux/Features/authSlice";
 import { HeaderContent } from "./HeaderComponents/headerContent";
-import AdminRoute from "../../Components/AdminComponents/adminRoute";
+import AdminRoute from "../../Components/Admin/adminRoute";
 
 const Header = () => {
     const [toggle, setToggle] = useState(false);

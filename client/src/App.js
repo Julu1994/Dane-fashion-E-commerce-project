@@ -8,7 +8,7 @@ import Login from "./Pages/LoginPage/login";
 import Register from "./Pages/RegisterPage/register";
 import { Reset } from "./Pages/PasswordReset/reset";
 import Admin from "./Pages/AdminPage/admin";
-import AdminRoute from "./Components/AdminComponents/adminRoute";
+import AdminRoute from "./Components/Admin/adminRoute";
 import SingleProduct from "./Pages/SingleProduct/singleProduct";
 import { useSelector } from "react-redux";
 import Cart from "./Pages/CartPage/cart";

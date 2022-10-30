@@ -1,11 +1,11 @@
 import React from "react";
 import "./admin.scss";
 import { Route, Routes } from "react-router-dom";
-import AdminHome from "../../Components/AdminComponents/AdminHome/adminHome";
-import AdminNav from "../../Components/AdminComponents/AdminNav/adminNav";
-import OrderManagement from "../../Components/AdminComponents/OrderManagemet/orderManagement";
-import PostProducts from "../../Components/AdminComponents/PostPorducts/postProducts";
-import ViewProducts from "../../Components/AdminComponents/ViewProducts/viewProducts";
+import AdminHome from "../../Components/Admin/AdminHome/adminHome";
+import AdminNav from "../../Components/Admin/AdminNav/adminNav";
+import OrderManagement from "../../Components/Admin/OrderManagemet/orderManagement";
+import PostProducts from "../../Components/Admin/PostPorducts/postProducts";
+import ViewProducts from "../../Components/Admin/ViewProducts/viewProducts";
 
 const Admin = () => {
     return (

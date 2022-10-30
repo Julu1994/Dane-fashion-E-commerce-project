@@ -5,11 +5,11 @@ import Step from "@mui/material/Step";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { StepLabel } from "@mui/material";
-import DeliveryInfo from "../../Components/CheckoutComponents/deliveryInfo";
-import ConfirmOrder from "../../Components/CheckoutComponents/confirmOrder";
+import DeliveryInfo from "../../Components/Checkout/deliveryInfo";
+import ConfirmOrder from "../../Components/Checkout/confirmOrder";
 import { useDispatch, useSelector } from "react-redux";
 import { stepActions } from "../../Redux/Features/stepSlice";
-import CardPayment from "../../Components/CheckoutComponents/cardPayment";
+import CardPayment from "../../Components/Checkout/cardPayment";
 import { VscPass } from "react-icons/vsc";
 
 const steps = ["Delivery Info", "Confirm the order", "Payment"];
