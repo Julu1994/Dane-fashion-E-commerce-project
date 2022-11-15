@@ -26,6 +26,7 @@ function App() {
         <Router>
             <Header />
             {showCart && <Cart />}
+
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/product/:id" element={<SingleProduct />} />
@@ -37,6 +38,7 @@ function App() {
                 <Route path="/reset" element={<Reset />} />
                 <Route path="/checkout" element={<Checkout />} />
                 <Route path="/payment" element={<CardPayment />} />
+
                 <Route path="/order" element={<Order />} />
                 <Route path="/test" element={<Login />} />
 
