@@ -1,5 +1,5 @@
 import React from "react";
-import Payment from "./Payment/payment";
+import Payment from "./SubComponent/payment";
 import "./cardPayment.scss";
 import { useSelector } from "react-redux";
 
