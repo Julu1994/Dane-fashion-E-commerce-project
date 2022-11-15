@@ -5,7 +5,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { TiDelete } from "react-icons/ti";
 import Loginnav from "./HeaderComponents/loginnav";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../../Firebase/config";
+import { auth } from "../../Auth/config";
 import { useDispatch, useSelector } from "react-redux";
 import { authAction } from "../../Redux/Features/authSlice";
 import { HeaderContent } from "./HeaderComponents/headerContent";

@@ -3,7 +3,7 @@ import "./viewProducts.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductsData } from "../../../Redux/actionCreators";
 import { MdOutlineDelete, MdOutlineModeEditOutline } from "react-icons/md";
-import { database, storage } from "../../../Firebase/config";
+import { database, storage } from "../../../Auth/config";
 import { deleteDoc, doc } from "firebase/firestore";
 import { toast } from "react-toastify";
 import Notiflix from "notiflix";

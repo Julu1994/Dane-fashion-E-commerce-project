@@ -1,6 +1,6 @@
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { toast } from "react-toastify";
-import { database } from "../Firebase/config";
+import { database } from "../Auth/config";
 import { orderHistoryActions } from "./Features/orderHistorySlice";
 
 export const getOrderData = () => {

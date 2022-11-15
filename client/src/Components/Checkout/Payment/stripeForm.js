@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { addDoc, collection } from "firebase/firestore";
-import { database } from "../../../Firebase/config";
+import { database } from "../../../Auth/config";
 import "./stripeForm.scss";
 import { stepActions } from "../../../Redux/Features/stepSlice";
 

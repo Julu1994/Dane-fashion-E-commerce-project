@@ -5,7 +5,7 @@ import Button from "../../GlobalComponents/Common/button";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../Firebase/config";
+import { auth } from "../../Auth/config";
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {

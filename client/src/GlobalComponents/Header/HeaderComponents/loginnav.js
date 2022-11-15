@@ -2,7 +2,7 @@ import "./loginnav.scss";
 import React from "react";
 import { Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
-import { auth } from "../../../Firebase/config";
+import { auth } from "../../../Auth/config";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleActions } from "../../../Redux/Features/toggleSlice";
