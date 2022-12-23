@@ -6,7 +6,7 @@
     position: relative;
     margin: 2rem auto;
     width: 95%;
-    height: 60vh;
+    height: 35rem;
     background: $pink-background;
     border-radius: 2rem;
     display: flex;
@@ -98,7 +98,7 @@
 @media (max-width: 576px) {
 
     .banner {
-        height: 30vh;
+        height: 18rem;
         margin: 0 auto;
 
         &-content-main {
@@ -120,7 +120,11 @@
         }
 
         &-img {
-            width: 40%;
+
+            max-width: 15rem;
+            width: 45%;
+            left: 60%;
+            top: 0;
         }
     }
 
