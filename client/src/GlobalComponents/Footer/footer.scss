@@ -4,7 +4,10 @@
 .footer {
     background-color: $section-color;
 
-
+    &-wrapper {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
 
 
     &-main {
@@ -17,7 +20,7 @@
     }
 }
 
-@media only screen and (max-width: 976px) {
+@media (max-width: 976px) {
     .footer-main {
         display: block;
     }

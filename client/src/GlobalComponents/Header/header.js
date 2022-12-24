@@ -34,59 +34,63 @@ const Header = () => {
     });
     return (
         <div className="header">
-            <div className="header-togle">
-                <GiHamburgerMenu
-                    onClick={toggleClick}
-                    className="header-togle-btn"
-                />
+            <div className="header-wrapper">
+                <div className="header-togle">
+                    <GiHamburgerMenu
+                        onClick={toggleClick}
+                        className="header-togle-btn"
+                    />
+                </div>
+                <Link to="/" className="header-logo">
+                    Dane<span className="header-logo-dot">.</span>com
+                </Link>
+                <nav
+                    className={
+                        toggle
+                            ? "header-nav show-togle"
+                            : "header-nav hide-togle"
+                    }>
+                    <ul className="header-nav-list">
+                        {toggle && (
+                            <TiDelete
+                                onClick={toggleClick}
+                                className="header-nav-item"
+                            />
+                        )}
+                        <li className="header-nav-item">
+                            <Link className="header-nav-link" to="/">
+                                Home
+                            </Link>
+                        </li>
+                        <li className="header-nav-item">
+                            <Link className="header-nav-link" to="/shop">
+                                Shop
+                            </Link>
+                        </li>
+                        <li className="header-nav-item">
+                            <Link className="header-nav-link" to="/treasure">
+                                Treasure
+                            </Link>
+                        </li>
+                        <li className="header-nav-item">
+                            <AdminRoute>
+                                <button className="header-nav-btn">
+                                    <Link
+                                        style={{
+                                            textDecoration: "none",
+                                            color: "white",
+                                        }}
+                                        to="/admin/home">
+                                        Admin
+                                    </Link>
+                                </button>
+                            </AdminRoute>
+                        </li>
+                    </ul>
+                </nav>
+                <HeaderContent />
+                {profileToggle && <Loginnav />}
             </div>
-            <Link to="/" className="header-logo">
-                Dane<span className="header-logo-dot">.</span>com
-            </Link>
-            <nav
-                className={
-                    toggle ? "header-nav show-togle" : "header-nav hide-togle"
-                }>
-                <ul className="header-nav-list">
-                    {toggle && (
-                        <TiDelete
-                            onClick={toggleClick}
-                            className="header-nav-item"
-                        />
-                    )}
-                    <li className="header-nav-item">
-                        <Link className="header-nav-link" to="/">
-                            Home
-                        </Link>
-                    </li>
-                    <li className="header-nav-item">
-                        <Link className="header-nav-link" to="/shop">
-                            Shop
-                        </Link>
-                    </li>
-                    <li className="header-nav-item">
-                        <Link className="header-nav-link" to="/treasure">
-                            Treasure
-                        </Link>
-                    </li>
-                    <li className="header-nav-item">
-                        <AdminRoute>
-                            <button className="header-nav-btn">
-                                <Link
-                                    style={{
-                                        textDecoration: "none",
-                                        color: "white",
-                                    }}
-                                    to="/admin/home">
-                                    Admin
-                                </Link>
-                            </button>
-                        </AdminRoute>
-                    </li>
-                </ul>
-            </nav>
-            <HeaderContent />
-            {profileToggle && <Loginnav />}
         </div>
     );
 };

@@ -2,10 +2,9 @@
 @import "../../Components/Sass/mixins.scss";
 
 .header {
-    width: 80%;
+    max-width: 1400px;
     height: 5rem;
     margin: 0 auto;
-    position: relative;
 
     &-togle {
         margin-top: 2.7rem;
@@ -18,6 +17,15 @@
             cursor: pointer;
         }
     }
+
+    &-wrapper {
+        width: 95%;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+    }
+
+
 
     &-logo {
         width: 15%;
@@ -102,6 +110,8 @@
 
 
 }
+
+
 
 
 //Media Query

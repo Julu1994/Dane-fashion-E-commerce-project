@@ -32,17 +32,19 @@ const Footer = () => {
     }, [deviceWidth]);
     return (
         <div className="footer" style={{ display: "block" }}>
-            <div className="footer-main">
-                <FooterLinks click={linkDropdown} showlink={showLink} />
-                <Catagory
-                    clickCatagory={catagoryDropdown}
-                    showcatagory={showCatagory}
-                />
-                <FooterContact
-                    clickcontact={contactDropdown}
-                    showcontact={showContact}
-                />
-                <FooterSocial />
+            <div className="footer-wrapper">
+                <div className="footer-main">
+                    <FooterLinks click={linkDropdown} showlink={showLink} />
+                    <Catagory
+                        clickCatagory={catagoryDropdown}
+                        showcatagory={showCatagory}
+                    />
+                    <FooterContact
+                        clickcontact={contactDropdown}
+                        showcontact={showContact}
+                    />
+                    <FooterSocial />
+                </div>
             </div>
         </div>
     );
