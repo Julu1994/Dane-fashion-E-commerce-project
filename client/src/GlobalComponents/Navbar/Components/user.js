@@ -1,4 +1,4 @@
-import "./loginnav.scss";
+import "./user.scss";
 import React from "react";
 import { Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleActions } from "../../../Redux/Features/toggleSlice";
 
-const Loginnav = () => {
+const User = () => {
     const isUser = useSelector((state) => state.user.userInfo);
     const dispatcher = useDispatch;
     const loggingOut = () => {
@@ -63,4 +63,4 @@ const Loginnav = () => {
     );
 };
 
-export default Loginnav;
+export default User;

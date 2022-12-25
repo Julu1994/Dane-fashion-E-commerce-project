@@ -1,4 +1,4 @@
-import "./headerContent.scss";
+import "./toolbar.scss";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineUser } from "react-icons/ai";
@@ -7,7 +7,7 @@ import Avater from "./avater";
 import { toggleActions } from "../../../Redux/Features/toggleSlice";
 import { cartToggleActions } from "../../../Redux/Features/cartToggleSlice";
 
-export const HeaderContent = () => {
+export const Toolbar = () => {
     const userDetails = useSelector((state) => state.user.userInfo);
     const cartQuantity = useSelector((state) => state.cartItem.totalQuantity);
     const dispatcher = useDispatch();

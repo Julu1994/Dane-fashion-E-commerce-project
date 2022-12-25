@@ -16,7 +16,7 @@ import Checkout from "./Pages/CheckoutPage/checkout";
 import CardPayment from "./Pages/Payment/cardPayment";
 import Order from "./Pages/OrderHistory/order";
 import Treasure from "./Pages/TreasurePage/treasure";
-import Header from "./GlobalComponents/Header/header";
+import Navbar from "./GlobalComponents/Navbar";
 
 function App() {
     const showCart = useSelector((state) => state.cartToggle.cartShow);
@@ -24,7 +24,7 @@ function App() {
     console.log(a);
     return (
         <Router>
-            <Header />
+            <Navbar />
             {showCart && <Cart />}
 
             <Routes>

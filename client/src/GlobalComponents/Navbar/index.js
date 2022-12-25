@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import "./header.scss";
+import "./index.scss";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { TiDelete } from "react-icons/ti";
-import Loginnav from "./HeaderComponents/loginnav";
+import Loginnav from "./Components/user";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../Auth/config";
 import { useDispatch, useSelector } from "react-redux";
 import { authAction } from "../../Redux/Features/authSlice";
-import { HeaderContent } from "./HeaderComponents/headerContent";
+import { Toolbar } from "./Components/toolbar";
 import AdminRoute from "../../Components/Admin/adminRoute";
 
-const Header = () => {
+const Navbar = () => {
     const [toggle, setToggle] = useState(false);
     const dispatcher = useDispatch();
     const toggleClick = () => {
@@ -88,11 +88,11 @@ const Header = () => {
                         </li>
                     </ul>
                 </nav>
-                <HeaderContent />
+                <Toolbar />
                 {profileToggle && <Loginnav />}
             </div>
         </div>
     );
 };
 
-export default Header;
+export default Navbar;
